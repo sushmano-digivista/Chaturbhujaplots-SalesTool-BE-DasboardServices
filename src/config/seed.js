@@ -1,0 +1,67 @@
+const defaultContent = {
+  _id: 'CONTENT',
+  hero: {
+    headline:      'Premium Plots',
+    subheadline:   'Amaravati',
+    description:   "Secure your land just 8 km from Andhra Pradesh's new capital city — fully CRDA & RERA approved with world-class amenities.",
+    approvalBadges:['CRDA Approved · LP No: 35/2025','AP RERA · P06060125894','Ready for Construction'],
+  },
+  highlights: [
+    { icon:'🛣️', title:'Near National Highway',   description:'Direct access to NH-16, connecting major cities.',    sortOrder:1 },
+    { icon:'🏛️', title:'8 km from Amaravati',     description:"Minutes from AP's new capital city.",                sortOrder:2 },
+    { icon:'🚆', title:'Road & Rail Connectivity', description:'Proposed express highway and railway expansion.',     sortOrder:3 },
+    { icon:'🏭', title:'Logistic Hub, Paritala',   description:'Upcoming industrial and logistics corridor.',        sortOrder:4 },
+    { icon:'🎓', title:'Educational & Medical',    description:'SRM, NRI Medical College within 10 km.',             sortOrder:5 },
+    { icon:'🏏', title:'Mulapadu Stadium',         description:'International-grade cricket stadium nearby.',        sortOrder:6 },
+  ],
+  amenities: [
+    { tab:'INFRA',     icon:'🏛️', label:'Grand Entrance Arch',    sortOrder:1, featured:false },
+    { tab:'INFRA',     icon:'🛤️', label:'60ft & 40ft Roads',       sortOrder:2, featured:false },
+    { tab:'INFRA',     icon:'💡', label:'Underground Electricity', sortOrder:3, featured:false },
+    { tab:'INFRA',     icon:'💧', label:'Water Pipeline',          sortOrder:4, featured:false },
+    { tab:'INFRA',     icon:'🅿️', label:'Visitor Parking',         sortOrder:5, featured:false },
+    { tab:'INFRA',     icon:'🔒', label:'Gated Security',          sortOrder:6, featured:false },
+    { tab:'INFRA',     icon:'🙏', label:'Hanuman Temple Nearby',   sortOrder:7, featured:true,
+      featuredDesc:'A magnificent Hanuman temple is located just minutes from Anjana Paradise.' },
+    { tab:'LIFESTYLE', icon:'🏃', label:'Jogging Track',           sortOrder:1, featured:false },
+    { tab:'LIFESTYLE', icon:'☮️', label:'100% Vaastu Compliant',   sortOrder:2, featured:false },
+    { tab:'LIFESTYLE', icon:'🗿', label:'Buddha Statue',           sortOrder:3, featured:false },
+    { tab:'LIFESTYLE', icon:'🌸', label:'Floral Gardens',          sortOrder:4, featured:false },
+    { tab:'UTILITIES', icon:'🌐', label:'Fibre Internet Ready',    sortOrder:1, featured:false },
+    { tab:'UTILITIES', icon:'⚡', label:'Solar Street Lights',     sortOrder:2, featured:false },
+    { tab:'UTILITIES', icon:'📡', label:'CCTV Surveillance',       sortOrder:3, featured:false },
+  ],
+  distances: [
+    { icon:'🏛️', name:'Amaravati Capital',      subtitle:'New State Capital',    distance:'8 km',  sortOrder:1 },
+    { icon:'🛣️', name:'National Highway NH-16', subtitle:'Direct connectivity',  distance:'3 km',  sortOrder:2 },
+    { icon:'🎓', name:'SRM University',          subtitle:'Engineering & Medical',distance:'6 km',  sortOrder:3 },
+    { icon:'🏥', name:'NRI Medical College',     subtitle:'Healthcare hub',       distance:'7 km',  sortOrder:4 },
+    { icon:'🏏', name:'Mulapadu Stadium',        subtitle:'International facility',distance:'4 km', sortOrder:5 },
+    { icon:'✈️', name:'Vijayawada Airport',      subtitle:'Air connectivity',     distance:'22 km', sortOrder:6 },
+  ],
+  quote: {
+    investLine1: 'Invest ₹2 Today —',
+    investLine2: 'Receive ₹20 Tomorrow',
+    quote:       'If you invest 2 rupees now, in a few years it will be 10 times your investment.',
+    stats: [
+      { value:'10×',  label:'Expected Return' },
+      { value:'5–7',  label:'Years Horizon'   },
+      { value:'Safe', label:'CRDA + RERA'     },
+    ],
+  },
+  stats: [
+    { value:'120+', label:'Total Plots'    },
+    { value:'8 km', label:'From Amaravati' },
+    { value:'2025', label:'CRDA Approved'  },
+  ],
+  contact: {
+    phone:       '+91 99999 99999',
+    whatsapp:    '919999999999',
+    email:       'info@anjanaparadise.in',
+    address:     'Paritala, Krishna District, Andhra Pradesh 521180',
+    mapEmbedUrl: 'https://maps.google.com/maps?q=Paritala,Andhra+Pradesh,India&t=k&z=14&ie=UTF8&iwloc=&output=embed',
+    mapOpenUrl:  'https://maps.google.com/?q=Paritala,Krishna+District,Andhra+Pradesh',
+  },
+}
+
+module.exports = { defaultContent }
