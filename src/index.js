@@ -10,6 +10,9 @@ const contentRoutes = require('./routes/content.routes')
 const app  = express()
 const PORT = process.env.PORT || 8082
 
+// Disable ETag — prevents 304 Not Modified serving stale DB data
+app.set('etag', false)
+
 // ── CORS ──────────────────────────────────────────────────────────────────────
 const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000').split(',').map(o => o.trim())
 app.use(cors({
