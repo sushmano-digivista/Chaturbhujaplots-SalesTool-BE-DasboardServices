@@ -5,7 +5,15 @@ const leadSchema = new mongoose.Schema({
   name:             { type: String, required: true, trim: true },
   phone:            { type: String, required: true, match: /^[6-9]\d{9}$/ },
   email:            { type: String, trim: true },
-  source:           { type: String, enum: ['HERO_CTA','CATEGORY_ENQUIRY','CONTACT_FORM','STICKY_BAR','WHATSAPP','FLOATING_BUTTON'], default: 'CONTACT_FORM' },
+  source: {
+    type: String,
+    enum: [
+      'HERO_CTA', 'CATEGORY_ENQUIRY', 'CONTACT_FORM', 'STICKY_BAR',
+      'WHATSAPP', 'FLOATING_BUTTON', 'DIMENSION_ENQUIRY', 'PROJECT_HOME',
+      'SITE_VISIT_SCHEDULED', 'UPCOMING_INTEREST', 'CALLBACK_FORM',
+    ],
+    default: 'CONTACT_FORM',
+  },
   categoryInterest: { type: String },
   status:           { type: String, enum: ['NEW','CONTACTED','SITE_VISIT_SCHEDULED','CONVERTED','CLOSED'], default: 'NEW' },
   notes:            { type: String },
