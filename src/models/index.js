@@ -69,6 +69,34 @@ const projectContentSchema = new mongoose.Schema({
     mapEmbedUrl: String,
     mapOpenUrl:  String,
   },
+  // ── Director contact card shown on Hero ───────────────────────────────────
+  director: {
+    title:  String,   // e.g. "Marketing Director"
+    name:   String,   // e.g. "M Siva Nageswara Rao"
+    phone:  String,   // e.g. "+91 99487 09041"
+    avatar: String,   // initials or emoji, e.g. "M"
+  },
+  // ── Urgency / Limited-Time card data ─────────────────────────────────────
+  urgency: {
+    tagline:            String,   // "Limited Time Offer"
+    headline:           String,   // "Plots Closing Fast!"
+    subheadline:        String,   // "Lock In Current Rates"
+    description:        String,   // "Prices are set to rise…"
+    openProjects:       Number,
+    openProjectsLabel:  String,   // "Projects Open"
+    openProjectsSub:    String,   // "For Booking"
+    completedProjects:  Number,
+    completedLabel:     String,   // "Projects"
+    completedSub:       String,   // "Completed"
+    happyFamilies:      String,   // "1200+"
+    familiesLabel:      String,   // "Happy"
+    familiesSub:        String,   // "Families"
+    barOpenLabel:       String,   // "Open for Booking"
+    barClosedLabel:     String,   // "Completed & Sold"
+    ctaButton:          String,   // "Explore All Projects →"
+  },
+  // ── Trust stats (bottom 3 boxes on the card) ─────────────────────────────
+  lcStats: [{ num: String, label: String }],
 }, { _id: false, timestamps: true })
 
 const Lead           = mongoose.model('Lead',           leadSchema)

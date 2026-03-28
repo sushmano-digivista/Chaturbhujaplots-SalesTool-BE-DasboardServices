@@ -62,6 +62,35 @@ const defaultContent = {
     mapEmbedUrl: 'https://maps.google.com/maps?q=Paritala,Andhra+Pradesh,India&t=k&z=14&ie=UTF8&iwloc=&output=embed',
     mapOpenUrl:  'https://maps.google.com/?q=Paritala,Krishna+District,Andhra+Pradesh',
   },
+  director: {
+    title:  'Marketing Director',
+    name:   'M Siva Nageswara Rao',
+    phone:  '+91 99487 09041',
+    avatar: 'M',
+  },
+  urgency: {
+    tagline:           'Limited Time Offer',
+    headline:          'Plots Closing Fast!',
+    subheadline:       'Lock In Current Rates',
+    description:       'Prices are set to rise next quarter. Secure your plot today before the revision hits.',
+    openProjects:      4,
+    openProjectsLabel: 'Projects Open',
+    openProjectsSub:   'For Booking',
+    completedProjects: 11,
+    completedLabel:    'Projects',
+    completedSub:      'Completed',
+    happyFamilies:     '1200+',
+    familiesLabel:     'Happy',
+    familiesSub:       'Families',
+    barOpenLabel:      'Open for Booking',
+    barClosedLabel:    'Completed & Sold',
+    ctaButton:         'Explore All Projects →',
+  },
+  lcStats: [
+    { num: '25+',  label: 'Years of Trust' },
+    { num: '100%', label: 'Clear Title'    },
+    { num: 'RERA', label: 'Registered'     },
+  ],
 }
 
 module.exports = { defaultContent }
