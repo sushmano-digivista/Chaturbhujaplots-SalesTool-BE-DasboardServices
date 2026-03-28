@@ -99,6 +99,12 @@ const projectContentSchema = new mongoose.Schema({
   lcStats: [{ num: String, label: String }],
   // ── Animated stats bar on the Hero left panel ─────────────────────────────
   heroStats: [{ end: Number, suffix: String, label: String }],
+  // ── Per-project brochure availability notes ───────────────────────────────
+  brochureNotes: [{
+    projectName: String,   // must match ACTIVE_PROJECTS name exactly
+    available:   Boolean,  // false = no brochure yet
+    note:        String,   // shown in modal when project selected & no brochure
+  }],
 }, { _id: false, timestamps: true })
 
 const Lead           = mongoose.model('Lead',           leadSchema)
