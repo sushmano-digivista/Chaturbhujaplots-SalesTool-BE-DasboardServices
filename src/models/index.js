@@ -97,6 +97,8 @@ const projectContentSchema = new mongoose.Schema({
   },
   // ── Trust stats (bottom 3 boxes on the card) ─────────────────────────────
   lcStats: [{ num: String, label: String }],
+  // ── Animated stats bar on the Hero left panel ─────────────────────────────
+  heroStats: [{ end: Number, suffix: String, label: String }],
 }, { _id: false, timestamps: true })
 
 const Lead           = mongoose.model('Lead',           leadSchema)

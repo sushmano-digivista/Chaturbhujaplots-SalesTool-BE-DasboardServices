@@ -91,6 +91,11 @@ const defaultContent = {
     { num: '100%', label: 'Clear Title'    },
     { num: 'RERA', label: 'Registered'     },
   ],
+  heroStats: [
+    { end: 25,   suffix: '+', label: 'Years in Industry'  },
+    { end: 15,   suffix: '+', label: 'Projects Delivered' },
+    { end: 1200, suffix: '+', label: 'Happy Customers'    },
+  ],
 }
 
 module.exports = { defaultContent }
