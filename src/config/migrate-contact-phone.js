@@ -7,19 +7,24 @@ const mongoose = require('mongoose')
 
 async function run() {
   await mongoose.connect(process.env.MONGODB_URI)
-  console.log('✓ MongoDB connected')
+  console.log('MongoDB connected')
 
   const db = mongoose.connection.db
   const result = await db.collection('content').updateMany(
     {},
-    { $set: { 
+    { $set: {
       'contact.whatsapp': '919739762698',
       'contact.phone':    '+91 97397 62698'
     }}
   )
-  console.log(`✓ Updated ${result.modifiedCount} document(s)`)
+  console.log(`Updated ${result.modifiedCount} document(s)`)
   await mongoose.disconnect()
-  console.log('✓ Done')
+  console.log('Done')
 }
 
-run().catch(err => { console.error('✗', err.message); process.exit(1) })
+module.exports = { run }
+
+// Run directly when invoked as a script
+if (require.main === module) {
+  run().catch(err => { console.error(err.message); process.exit(1) })
+}
