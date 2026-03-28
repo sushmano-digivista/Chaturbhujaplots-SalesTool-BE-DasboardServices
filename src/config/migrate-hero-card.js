@@ -1,21 +1,28 @@
 /**
  * migrate-hero-card.js
- * Adds director, urgency, and lcStats fields to the existing CONTENT document.
- * Safe to re-run — uses $set to write/overwrite the three new sections.
+ * Adds director, urgency, lcStats and heroStats to the CONTENT document.
+ * Safe to re-run — uses $set so existing fields are overwritten cleanly.
  *
  * Run: MONGODB_URI=<uri> node src/config/migrate-hero-card.js
+ * The script auto-injects /anjana_dashboard into the URI if not present.
  */
 
 require('dotenv').config()
 const mongoose = require('mongoose')
-const { defaultContent } = require('./seed')
 
-const MONGO_URI = process.env.MONGODB_URI || process.env.MONGO_URI
-if (!MONGO_URI) { console.error('MONGODB_URI not set'); process.exit(1) }
+let MONGO_URI = process.env.MONGODB_URI || process.env.MONGO_URI
+if (!MONGO_URI) { console.error('❌  MONGODB_URI not set'); process.exit(1) }
+
+// Always target anjana_dashboard — inject into URI if missing
+if (!MONGO_URI.includes('anjana_dashboard')) {
+  MONGO_URI = MONGO_URI.includes('?')
+    ? MONGO_URI.replace('?', 'anjana_dashboard?')
+    : MONGO_URI + 'anjana_dashboard'
+}
 
 async function run() {
   await mongoose.connect(MONGO_URI)
-  console.log('Connected to MongoDB')
+  console.log(`✅  Connected — db: ${mongoose.connection.db.databaseName}`)
 
   const col = mongoose.connection.collection('project_content')
 
@@ -23,20 +30,50 @@ async function run() {
     { _id: 'CONTENT' },
     {
       $set: {
-        director: defaultContent.director,
-        urgency:  defaultContent.urgency,
-        lcStats:  defaultContent.lcStats,
+        director: {
+          title:  'Marketing Director',
+          name:   'M Siva Nageswara Rao',
+          phone:  '+91 99487 09041',
+          avatar: 'M',
+        },
+        urgency: {
+          tagline:           'Limited Time Offer',
+          headline:          'Plots Closing Fast!',
+          subheadline:       'Lock In Current Rates',
+          description:       'Prices are set to rise next quarter. Secure your plot today before the revision hits.',
+          openProjects:      4,
+          openProjectsLabel: 'Projects Open',
+          openProjectsSub:   'For Booking',
+          completedProjects: 11,
+          completedLabel:    'Projects',
+          completedSub:      'Completed',
+          happyFamilies:     '1200+',
+          familiesLabel:     'Happy',
+          familiesSub:       'Families',
+          barOpenLabel:      'Open for Booking',
+          barClosedLabel:    'Completed & Sold',
+          ctaButton:         'Explore All Projects →',
+        },
+        lcStats: [
+          { num: '25+',  label: 'Years of Trust' },
+          { num: '100%', label: 'Clear Title'    },
+          { num: 'RERA', label: 'Registered'     },
+        ],
+        heroStats: [
+          { end: 25,   suffix: '+', label: 'Years in Industry'  },
+          { end: 15,   suffix: '+', label: 'Projects Delivered' },
+          { end: 1200, suffix: '+', label: 'Happy Customers'    },
+        ],
       },
     }
   )
 
-  console.log(`Migration complete — matched: ${result.matchedCount}, modified: ${result.modifiedCount}`)
+  console.log(`✅  Migration complete — matched: ${result.matchedCount}, modified: ${result.modifiedCount}`)
   await mongoose.disconnect()
 }
 
 module.exports = { run }
 
-// Run directly when invoked as a script
 if (require.main === module) {
-  run().catch(err => { console.error('Migration failed:', err); process.exit(1) })
+  run().catch(err => { console.error('❌  Migration failed:', err); process.exit(1) })
 }
