@@ -43,8 +43,15 @@ app.use((err, req, res, next) => {
 // ── Start ─────────────────────────────────────────────────────────────────────
 async function start() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI)
-    console.log('✓ MongoDB connected')
+    // Always target anjana_dashboard — inject into URI if not already present
+    let mongoUri = process.env.MONGODB_URI
+    if (mongoUri && !mongoUri.includes('anjana_dashboard')) {
+      mongoUri = mongoUri.includes('?')
+        ? mongoUri.replace('?', 'anjana_dashboard?')
+        : mongoUri + 'anjana_dashboard'
+    }
+    await mongoose.connect(mongoUri)
+    console.log(`✓ MongoDB connected — db: ${mongoose.connection.db.databaseName}`)
     app.listen(PORT, () => console.log(`✓ dashboard-service running on port ${PORT}`))
   } catch (err) {
     console.error('✗ Failed to start:', err)

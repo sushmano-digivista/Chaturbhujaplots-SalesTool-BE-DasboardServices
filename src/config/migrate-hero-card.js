@@ -30,6 +30,11 @@ async function run() {
     { _id: 'CONTENT' },
     {
       $set: {
+        'hero.approvalBadges': [
+          'APCRDA Proposed Layout · LP No: 35/2025',
+          'AP RERA · P06060125894',
+          '25 Years · 15+ Projects · 1200+ Families',
+        ],
         director: {
           title:  'Marketing Director',
           name:   'M Siva Nageswara Rao',
