@@ -86,4 +86,30 @@ describe('defaultContent seed data', () => {
       expect(stat).toHaveProperty('label')
     }
   })
+
+  it('has heroStats array with animated counter data', () => {
+    expect(Array.isArray(defaultContent.heroStats)).toBe(true)
+    expect(defaultContent.heroStats.length).toBe(3)
+    for (const stat of defaultContent.heroStats) {
+      expect(typeof stat.end).toBe('number')
+      expect(stat).toHaveProperty('suffix')
+      expect(stat).toHaveProperty('label')
+    }
+  })
+
+  it('has brochureNotes array', () => {
+    expect(Array.isArray(defaultContent.brochureNotes)).toBe(true)
+    expect(defaultContent.brochureNotes.length).toBeGreaterThan(0)
+    for (const note of defaultContent.brochureNotes) {
+      expect(note).toHaveProperty('projectName')
+      expect(note).toHaveProperty('available')
+      expect(note).toHaveProperty('note')
+    }
+  })
+
+  it('has updated approvalBadges with APCRDA', () => {
+    expect(defaultContent.hero.approvalBadges).toContainEqual(
+      expect.stringContaining('APCRDA')
+    )
+  })
 })

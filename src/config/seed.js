@@ -4,7 +4,11 @@ const defaultContent = {
     headline:      'Premium Plots',
     subheadline:   'Amaravati',
     description:   "Secure your land just 8 km from Andhra Pradesh's new capital city — fully CRDA & RERA approved with world-class amenities.",
-    approvalBadges:['CRDA Approved · LP No: 35/2025','AP RERA · P06060125894','Ready for Construction'],
+    approvalBadges:[
+      'APCRDA Proposed Layout · LP No: 35/2025',
+      'AP RERA · P06060125894',
+      '25 Years · 15+ Projects · 1200+ Families',
+    ],
   },
   highlights: [
     { icon:'🛣️', title:'Near National Highway',   description:'Direct access to NH-16, connecting major cities.',    sortOrder:1 },

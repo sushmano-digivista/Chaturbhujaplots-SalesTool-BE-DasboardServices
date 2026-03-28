@@ -104,5 +104,7 @@ describe('Models schema definitions', () => {
     expect(schema.urgency.headline).toBe(String)
     expect(schema.urgency.openProjects).toBe(Number)
     expect(schema.lcStats).toBeDefined()
+    expect(schema.heroStats).toBeDefined()
+    expect(schema.brochureNotes).toBeDefined()
   })
 })
