@@ -64,7 +64,7 @@ async function start() {
         console.error('  To fix — run ONE of the following:\n')
         console.error('  Windows (find & kill the process):')
         console.error(`    netstat -ano | findstr :${PORT}`)
-        console.error('    taskkill /PID <PID> /F\n')
+        console.error('    taskkill //PID <PID> //F   (Git Bash) or: taskkill /PID <PID> /F   (CMD/PowerShell)\n')
         console.error('  Mac/Linux:')
         console.error(`    lsof -ti :${PORT} | xargs kill -9\n`)
         console.error('  Or use a different port:')
