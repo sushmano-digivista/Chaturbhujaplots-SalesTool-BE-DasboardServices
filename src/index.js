@@ -42,7 +42,28 @@ async function start() {
   try {
     await mongoose.connect(process.env.MONGODB_URI)
     console.log('✓ MongoDB connected')
-    app.listen(PORT, () => console.log(`✓ dashboard-service running on port ${PORT}`))
+    const server = app.listen(PORT, () =>
+      console.log(`✓ dashboard-service running on port ${PORT}`)
+    )
+
+    server.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.error(`\n✗ Port ${PORT} is already in use.\n`)
+        console.error('  Another instance of dashboard-service may still be running.\n')
+        console.error('  To fix — run ONE of the following:\n')
+        console.error('  Windows (find & kill the process):')
+        console.error(`    netstat -ano | findstr :${PORT}`)
+        console.error('    taskkill /PID <PID> /F\n')
+        console.error('  Mac/Linux:')
+        console.error(`    lsof -ti :${PORT} | xargs kill -9\n`)
+        console.error('  Or use a different port:')
+        console.error(`    PORT=8083 npm run dev\n`)
+        process.exit(1)
+      } else {
+        console.error('✗ Server error:', err)
+        process.exit(1)
+      }
+    })
   } catch (err) {
     console.error('✗ Failed to start:', err)
     process.exit(1)
