@@ -23,7 +23,7 @@ app.use(express.json())
 
 // ── Health ────────────────────────────────────────────────────────────────────
 app.get('/actuator/health', (_, res) => res.json({ status: 'UP' }))
-app.get('/health',          (_, res) => res.json({ status: 'UP', service: 'dashboard-service' }))
+app.get('/health',          (_, res) => res.json({ status: 'UP', service: 'dashboard-service', version: 'v-ownerNotify-20260331-0912' }))
 
 // ── Routes ────────────────────────────────────────────────────────────────────
 app.use('/api/v1/auth',    authRoutes)
@@ -48,16 +48,23 @@ async function start() {
 
     server.on('error', (err) => {
       if (err.code === 'EADDRINUSE') {
-        console.error(`\n✗ Port ${PORT} is already in use.\n`)
-        console.error('  Another instance of dashboard-service may still be running.\n')
-        console.error('  To fix — run ONE of the following:\n')
+        console.error(`
+✗ Port ${PORT} is already in use.
+`)
+        console.error('  Another instance of dashboard-service may still be running.
+')
+        console.error('  To fix — run ONE of the following:
+')
         console.error('  Windows (find & kill the process):')
         console.error(`    netstat -ano | findstr :${PORT}`)
-        console.error('    taskkill //PID <PID> //F   (Git Bash) or: taskkill /PID <PID> /F   (CMD/PowerShell)\n')
+        console.error('    taskkill //PID <PID> //F   (Git Bash) or: taskkill /PID <PID> /F   (CMD/PowerShell)
+')
         console.error('  Mac/Linux:')
-        console.error(`    lsof -ti :${PORT} | xargs kill -9\n`)
+        console.error(`    lsof -ti :${PORT} | xargs kill -9
+`)
         console.error('  Or use a different port:')
-        console.error(`    PORT=8083 npm run dev\n`)
+        console.error(`    PORT=8083 npm run dev
+`)
         process.exit(1)
       } else {
         console.error('✗ Server error:', err)
