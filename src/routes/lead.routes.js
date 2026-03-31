@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const { Lead } = require('../models/index')
 const { verifyToken } = require('../middleware/auth')
+const { sendOwnerLeadAlert } = require('../services/ownerNotify.service')
 
 // ── PUBLIC — customer frontend ────────────────────────────────────────────────
 
@@ -12,6 +13,12 @@ router.post('/', async (req, res) => {
     const lead = new Lead({ name, phone, email, source, categoryInterest, projectInterest, status: 'NEW' })
     const saved = await lead.save()
     console.log(`New lead: ${saved.name} | ${saved.phone} | ${saved.source}`)
+
+    // CRITICAL: On Vercel serverless, the function terminates after res.send().
+    // The owner alert MUST be awaited BEFORE responding — otherwise Vercel
+    // kills the process immediately and the email never gets sent.
+    await sendOwnerLeadAlert(saved)
+
     res.status(201).json(saved)
   } catch (err) {
     if (err.name === 'ValidationError') {

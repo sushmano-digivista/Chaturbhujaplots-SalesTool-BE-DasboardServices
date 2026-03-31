@@ -5,7 +5,7 @@
  * Separated from index.test.js because start() requires different mock setup.
  */
 
-const mockListen  = jest.fn((port, cb) => cb && cb())
+const mockListen  = jest.fn((port, cb) => { cb && cb(); return { on: jest.fn() } })
 const mockConnect = jest.fn().mockResolvedValue({})
 
 jest.mock('mongoose', () => ({
