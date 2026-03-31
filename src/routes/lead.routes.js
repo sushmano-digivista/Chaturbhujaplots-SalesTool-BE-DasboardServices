@@ -1,15 +1,24 @@
 const router = require('express').Router()
 const { Lead } = require('../models/index')
 const { verifyToken } = require('../middleware/auth')
+const { sendOwnerLeadAlert } = require('../services/ownerNotify.service')
 
 // ── PUBLIC — customer frontend ────────────────────────────────────────────────
 
 // POST /api/v1/leads — submit enquiry
 router.post('/', async (req, res) => {
   try {
-    const lead = new Lead({ ...req.body, status: 'NEW' })
+    // Whitelist only expected fields (Checkmarx CWE-20 / Sonar S4823)
+    const { name, phone, email, source, categoryInterest, projectInterest } = req.body
+    const lead = new Lead({ name, phone, email, source, categoryInterest, projectInterest, status: 'NEW' })
     const saved = await lead.save()
     console.log(`New lead: ${saved.name} | ${saved.phone} | ${saved.source}`)
+
+    // Notify owner instantly — fire and forget (non-blocking)
+    sendOwnerLeadAlert(saved).catch(err =>
+      console.error('[lead.routes] Owner alert error:', err.message)
+    )
+
     res.status(201).json(saved)
   } catch (err) {
     if (err.name === 'ValidationError') {
