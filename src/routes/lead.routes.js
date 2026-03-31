@@ -14,10 +14,10 @@ router.post('/', async (req, res) => {
     const saved = await lead.save()
     console.log(`New lead: ${saved.name} | ${saved.phone} | ${saved.source}`)
 
-    // Notify owner instantly — fire and forget (non-blocking)
-    sendOwnerLeadAlert(saved).catch(err =>
-      console.error('[lead.routes] Owner alert error:', err.message)
-    )
+    // CRITICAL: On Vercel serverless, the function terminates after res.send().
+    // The owner alert MUST be awaited BEFORE responding — otherwise Vercel
+    // kills the process immediately and the email never gets sent.
+    await sendOwnerLeadAlert(saved)
 
     res.status(201).json(saved)
   } catch (err) {
