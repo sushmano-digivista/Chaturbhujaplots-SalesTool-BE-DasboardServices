@@ -17,8 +17,16 @@ app.set('etag', false)
 const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000').split(',').map(o => o.trim())
 app.use(cors({
   origin: (origin, cb) => {
-    if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) cb(null, true)
-    else cb(new Error(`CORS: ${origin} not allowed`))
+    // Allow requests with no origin (curl, mobile apps, Postman)
+    if (!origin) return cb(null, true)
+    // Allow all Vercel preview/production deployments and chaturbhuja domains
+    if (
+      allowedOrigins.includes('*') ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app') ||
+      origin.includes('chaturbhuja')
+    ) return cb(null, true)
+    cb(new Error(`CORS: ${origin} not allowed`))
   },
   credentials: false,
 }))
