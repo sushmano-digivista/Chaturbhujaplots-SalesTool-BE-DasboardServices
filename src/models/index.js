@@ -66,6 +66,7 @@ const projectContentSchema = new mongoose.Schema({
     whatsapp:    String,
     email:       String,
     address:     String,
+    website:     String,
     mapEmbedUrl: String,
     mapOpenUrl:  String,
   },
