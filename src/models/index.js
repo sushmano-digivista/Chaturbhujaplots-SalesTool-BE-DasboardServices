@@ -62,13 +62,14 @@ const projectContentSchema = new mongoose.Schema({
   },
   stats: [{ value: String, label: String }],
   contact: {
-    phone:       String,
-    whatsapp:    String,
-    email:       String,
-    address:     String,
-    website:     String,
-    mapEmbedUrl: String,
-    mapOpenUrl:  String,
+    phone:            String,
+    whatsapp:         String,
+    email:            String,
+    address:          String,
+    website:          String,
+    whatsappMessage:  String,
+    mapEmbedUrl:      String,
+    mapOpenUrl:       String,
   },
   // ── Director contact card shown on Hero ───────────────────────────────────
   director: {
