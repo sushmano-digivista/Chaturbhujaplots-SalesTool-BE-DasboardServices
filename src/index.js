@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const authRoutes    = require('./routes/auth.routes')
 const leadRoutes    = require('./routes/lead.routes')
 const contentRoutes = require('./routes/content.routes')
+const pricingRoutes = require('./routes/pricing.routes')
 
 const app  = express()
 const PORT = process.env.PORT || 8082
@@ -40,6 +41,7 @@ app.get('/health',          (_, res) => res.json({ status: 'UP', service: 'dashb
 app.use('/api/v1/auth',    authRoutes)
 app.use('/api/v1/leads',   leadRoutes)
 app.use('/api/v1/content', contentRoutes)
+app.use('/api/v1/pricing', pricingRoutes)
 
 // ── Handlers ──────────────────────────────────────────────────────────────────
 app.use((req, res) => res.status(404).json({ message: `Not found: ${req.method} ${req.path}` }))
