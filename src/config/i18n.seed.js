@@ -1,0 +1,273 @@
+/**
+ * i18n.seed.js — Seed data for English & Telugu translations.
+ * Stored in MongoDB `translations` collection. Each language is one document.
+ * Keys are dot-addressable (nav.portfolio, hero.enquireCta, etc.)
+ */
+
+const TRANSLATIONS = {
+  en: {
+    nav: {
+      portfolio:        'Portfolio',
+      gallery:          'Gallery',
+      videos:           'Videos',
+      amenities:        'Amenities',
+      location:         'Location',
+      contact:          'Contact',
+      enquireNow:       'Enquire Now',
+      openForBooking:   'Open for Booking',
+      completedSoldOut: 'Completed & Sold Out',
+      viewAllProjects:  'View all projects overview',
+      ourPortfolio:     'Our Portfolio',
+      projectsSettled:  '10+ projects \u00b7 1200+ families settled',
+    },
+
+    sections: {
+      highlights: 'Why Invest With Us?',
+      amenities:  'World-Class Amenities',
+      location:   'Our Locations',
+      gallery:    'Photo Gallery',
+      videos:     'Project Videos',
+      portfolio:  'Our Portfolio',
+      contact:    'Get In Touch',
+      quote:      'Your Investment, Your Future',
+    },
+
+    hero: {
+      enquireCta:    'Enquire Now',
+      brochureCta:   'Download Brochure',
+      siteVisitCta:  'Schedule Site Visit',
+      callbackCta:   'Request Callback',
+      scrollDown:    'Scroll to explore',
+      watchVideo:    'Watch Video',
+      trustedBy:     'Trusted by 1200+ families',
+    },
+
+    amenities: {
+      infra:     'Infrastructure',
+      lifestyle: 'Lifestyle',
+      utilities: 'Utilities',
+    },
+
+    contact: {
+      callUs:            'Call Us',
+      emailUs:           'Email Us',
+      ourOffice:         'Our Office',
+      getDirections:     'Get Directions',
+      sendWhatsApp:      'Send WhatsApp',
+      writeUs:           'Write to Us',
+      sendMessage:       'Send Message',
+      namePlaceholder:   'Your Full Name',
+      phonePlaceholder:  'Your Phone Number',
+      emailPlaceholder:  'Your Email (optional)',
+      messagePlaceholder:'Your message...',
+    },
+
+    modal: {
+      siteVisitTitle:  'Schedule a Free Site Visit',
+      callbackTitle:   'Request a Callback',
+      enquiryTitle:    'Plot Enquiry',
+      brochureTitle:   'Download Brochure',
+      namePlaceholder: 'Your Name',
+      phonePlaceholder:'Phone Number',
+      submit:          'Submit',
+      scheduleVisit:   'Schedule My Visit',
+      requestCallback: 'Request Callback',
+      sendBrochure:    'Send Brochure',
+      close:           'Close',
+      whatsappNote:    'We will send the brochure to your WhatsApp',
+      successMessage:  'Thank you! Our team will contact you shortly.',
+    },
+
+    portfolio: {
+      yearsIndustry:   'Years in Industry',
+      projectsDelivered:'Projects Delivered',
+      happyCustomers:  'Happy Customers',
+      apcrdaRera:      'APCRDA / RERA',
+      openForBooking:  'Open for Booking',
+      upcomingProject: 'Upcoming Project',
+      viewProject:     'View Project',
+      comingSoon:      'Coming Soon',
+      interestedBtn:   "I'm Interested",
+    },
+
+    quote: {
+      ctaBook:     'Book Your Plot Now',
+      ctaCallback: 'Request Free Callback',
+    },
+
+    footer: {
+      tagline:      'Building Dreams Across Andhra Pradesh',
+      rights:       'All rights reserved.',
+      privacyPolicy:'Privacy Policy',
+      quickLinks:   'Quick Links',
+      ourProjects:  'Our Projects',
+      followUs:     'Follow Us',
+    },
+
+    common: {
+      learnMore:      'Learn More',
+      readMore:       'Read More',
+      viewAll:        'View All',
+      close:          'Close',
+      loading:        'Loading...',
+      available:      'Available',
+      soldOut:        'Sold Out',
+      upcoming:       'Upcoming',
+      perSqYd:        '/ sq.yd',
+      sqYd:           'Sq.Yd',
+      plots:          'Plots',
+      plotsAvailable: 'plots available',
+      from:           'From',
+      yearsOfTrust:   'Years of Trust',
+      clearTitle:     'Clear Title',
+      reraRegistered: 'RERA Registered',
+    },
+
+    urgency: {
+      limitedOffer: 'Limited Time Offer',
+      plotsClosing: 'Plots Closing Fast!',
+      lockInRates:  'Lock In Current Rates',
+      pricesRising: 'Prices are set to rise next quarter. Secure your plot today before the revision hits.',
+      projectsOpen: 'Projects Open',
+      forBooking:   'For Booking',
+      completed:    'Completed',
+      happy:        'Happy',
+      families:     'Families',
+      exploreCta:   'Explore All Projects',
+    },
+  },
+
+  te: {
+    nav: {
+      portfolio:        '\u0c2a\u0c4b\u0c30\u0c4d\u200c\u0c1f\u0c4d\u200c\u0c2b\u0c4b\u0c32\u0c3f\u0c2f\u0c4b',
+      gallery:          '\u0c17\u0c4d\u0c2f\u0c3e\u0c32\u0c30\u0c40',
+      videos:           '\u0c35\u0c40\u0c21\u0c3f\u0c2f\u0c4b\u0c32\u0c41',
+      amenities:        '\u0c38\u0c4c\u0c15\u0c30\u0c4d\u0c2f\u0c3e\u0c32\u0c41',
+      location:         '\u0c38\u0c4d\u0c25\u0c3e\u0c28\u0c02',
+      contact:          '\u0c38\u0c02\u0c2a\u0c4d\u0c30\u0c26\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+      enquireNow:       '\u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c47 \u0c35\u0c3f\u0c1a\u0c3e\u0c30\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+      openForBooking:   '\u0c2c\u0c41\u0c15\u0c3f\u0c02\u0c17\u0c4d \u0c15\u0c4b\u0c38\u0c02 \u0c24\u0c46\u0c30\u0c3f\u0c1a\u0c3f \u0c09\u0c02\u0c26\u0c3f',
+      completedSoldOut: '\u0c2a\u0c42\u0c30\u0c4d\u0c24\u0c2f\u0c3f \u0c05\u0c2e\u0c4d\u0c2e\u0c41\u0c21\u0c2f\u0c3f\u0c28\u0c35\u0c3f',
+      viewAllProjects:  '\u0c05\u0c28\u0c4d\u0c28\u0c3f \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41 \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f',
+      ourPortfolio:     '\u0c2e\u0c3e \u0c2a\u0c4b\u0c30\u0c4d\u200c\u0c1f\u0c4d\u200c\u0c2b\u0c4b\u0c32\u0c3f\u0c2f\u0c4b',
+      projectsSettled:  '10+ \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41 \u00b7 1200+ \u0c15\u0c41\u0c1f\u0c41\u0c02\u0c2c\u0c3e\u0c32\u0c41',
+    },
+
+    sections: {
+      highlights: '\u0c2e\u0c3e\u0c24\u0c4b \u0c0e\u0c02\u0c26\u0c41\u0c15\u0c41 \u0c2a\u0c46\u0c1f\u0c4d\u0c1f\u0c41\u0c2c\u0c21\u0c3f \u0c2a\u0c46\u0c1f\u0c4d\u0c1f\u0c3e\u0c32\u0c3f?',
+      amenities:  '\u0c05\u0c24\u0c4d\u0c2f\u0c3e\u0c27\u0c41\u0c28\u0c3f\u0c15 \u0c38\u0c4c\u0c15\u0c30\u0c4d\u0c2f\u0c3e\u0c32\u0c41',
+      location:   '\u0c2e\u0c3e \u0c38\u0c4d\u0c25\u0c3e\u0c28\u0c3e\u0c32\u0c41',
+      gallery:    '\u0c2b\u0c4b\u0c1f\u0c4b \u0c17\u0c4d\u0c2f\u0c3e\u0c32\u0c30\u0c40',
+      videos:     '\u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c4d \u0c35\u0c40\u0c21\u0c3f\u0c2f\u0c4b\u0c32\u0c41',
+      portfolio:  '\u0c2e\u0c3e \u0c2a\u0c4b\u0c30\u0c4d\u200c\u0c1f\u0c4d\u200c\u0c2b\u0c4b\u0c32\u0c3f\u0c2f\u0c4b',
+      contact:    '\u0c2e\u0c3e\u0c24\u0c4b \u0c38\u0c02\u0c2a\u0c4d\u0c30\u0c26\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+      quote:      '\u0c2e\u0c40 \u0c2a\u0c46\u0c1f\u0c4d\u0c1f\u0c41\u0c2c\u0c21\u0c3f, \u0c2e\u0c40 \u0c2d\u0c35\u0c3f\u0c37\u0c4d\u0c2f\u0c24\u0c4d\u0c24\u0c41',
+    },
+
+    hero: {
+      enquireCta:   '\u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c47 \u0c35\u0c3f\u0c1a\u0c3e\u0c30\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+      brochureCta:  '\u0c2c\u0c4d\u0c30\u0c4b\u0c1a\u0c30\u0c4d \u0c21\u0c4c\u0c28\u0c4d\u200c\u0c32\u0c4b\u0c21\u0c4d',
+      siteVisitCta: '\u0c38\u0c48\u0c1f\u0c4d \u0c35\u0c3f\u0c1c\u0c3f\u0c1f\u0c4d \u0c37\u0c46\u0c21\u0c4d\u0c2f\u0c42\u0c32\u0c4d',
+      callbackCta:  '\u0c15\u0c3e\u0c32\u0c4d\u200c\u0c2c\u0c4d\u0c2f\u0c3e\u0c15\u0c4d \u0c15\u0c4b\u0c30\u0c02\u0c21\u0c3f',
+      scrollDown:   '\u0c15\u0c3f\u0c02\u0c26 \u0c38\u0c4d\u0c15\u0c4d\u0c30\u0c4b\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
+      watchVideo:   '\u0c35\u0c40\u0c21\u0c3f\u0c2f\u0c4b \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f',
+      trustedBy:    '1200+ \u0c15\u0c41\u0c1f\u0c41\u0c02\u0c2c\u0c3e\u0c32\u0c41 \u0c28\u0c2e\u0c4d\u0c2e\u0c41\u0c24\u0c41\u0c28\u0c4d\u0c28\u0c3e\u0c2f\u0c3f',
+    },
+
+    amenities: {
+      infra:     '\u0c2e\u0c4c\u0c32\u0c3f\u0c15 \u0c38\u0c26\u0c41\u0c2a\u0c3e\u0c2f\u0c3e\u0c32\u0c41',
+      lifestyle: '\u0c1c\u0c40\u0c35\u0c28 \u0c35\u0c3f\u0c27\u0c3e\u0c28\u0c02',
+      utilities: '\u0c2f\u0c41\u0c1f\u0c3f\u0c32\u0c3f\u0c1f\u0c40\u0c32\u0c41',
+    },
+
+    contact: {
+      callUs:            '\u0c15\u0c3e\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
+      emailUs:           '\u0c07\u0c2e\u0c46\u0c2f\u0c3f\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
+      ourOffice:         '\u0c2e\u0c3e \u0c15\u0c3e\u0c30\u0c4d\u0c2f\u0c3e\u0c32\u0c2f\u0c02',
+      getDirections:     '\u0c26\u0c3e\u0c30\u0c3f \u0c35\u0c3f\u0c35\u0c30\u0c3e\u0c32\u0c41',
+      sendWhatsApp:      '\u0c35\u0c3e\u0c1f\u0c4d\u0c38\u0c3e\u0c2a\u0c4d \u0c2a\u0c02\u0c2a\u0c02\u0c21\u0c3f',
+      writeUs:           '\u0c2e\u0c3e\u0c15\u0c41 \u0c30\u0c3e\u0c2f\u0c02\u0c21\u0c3f',
+      sendMessage:       '\u0c38\u0c02\u0c26\u0c47\u0c36\u0c02 \u0c2a\u0c02\u0c2a\u0c02\u0c21\u0c3f',
+      namePlaceholder:   '\u0c2e\u0c40 \u0c2a\u0c42\u0c30\u0c4d\u0c24\u0c3f \u0c2a\u0c47\u0c30\u0c41',
+      phonePlaceholder:  '\u0c2e\u0c40 \u0c2b\u0c4b\u0c28\u0c4d \u0c28\u0c02\u0c2c\u0c30\u0c4d',
+      emailPlaceholder:  '\u0c2e\u0c40 \u0c07\u0c2e\u0c46\u0c2f\u0c3f\u0c32\u0c4d (\u0c10\u0c1a\u0c4d\u0c1b\u0c3f\u0c15\u0c02)',
+      messagePlaceholder:'\u0c2e\u0c40 \u0c38\u0c02\u0c26\u0c47\u0c36\u0c02...',
+    },
+
+    modal: {
+      siteVisitTitle:  '\u0c09\u0c1a\u0c3f\u0c24 \u0c38\u0c48\u0c1f\u0c4d \u0c35\u0c3f\u0c1c\u0c3f\u0c1f\u0c4d \u0c37\u0c46\u0c21\u0c4d\u0c2f\u0c42\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
+      callbackTitle:   '\u0c15\u0c3e\u0c32\u0c4d\u200c\u0c2c\u0c4d\u0c2f\u0c3e\u0c15\u0c4d \u0c15\u0c4b\u0c30\u0c02\u0c21\u0c3f',
+      enquiryTitle:    '\u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c35\u0c3f\u0c1a\u0c3e\u0c30\u0c23',
+      brochureTitle:   '\u0c2c\u0c4d\u0c30\u0c4b\u0c1a\u0c30\u0c4d \u0c21\u0c4c\u0c28\u0c4d\u200c\u0c32\u0c4b\u0c21\u0c4d',
+      namePlaceholder: '\u0c2e\u0c40 \u0c2a\u0c47\u0c30\u0c41',
+      phonePlaceholder:'\u0c2b\u0c4b\u0c28\u0c4d \u0c28\u0c02\u0c2c\u0c30\u0c4d',
+      submit:          '\u0c38\u0c2e\u0c30\u0c4d\u0c2a\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+      scheduleVisit:   '\u0c28\u0c3e \u0c35\u0c3f\u0c1c\u0c3f\u0c1f\u0c4d \u0c37\u0c46\u0c21\u0c4d\u0c2f\u0c42\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
+      requestCallback: '\u0c15\u0c3e\u0c32\u0c4d\u200c\u0c2c\u0c4d\u0c2f\u0c3e\u0c15\u0c4d \u0c15\u0c4b\u0c30\u0c02\u0c21\u0c3f',
+      sendBrochure:    '\u0c2c\u0c4d\u0c30\u0c4b\u0c1a\u0c30\u0c4d \u0c2a\u0c02\u0c2a\u0c02\u0c21\u0c3f',
+      close:           '\u0c2e\u0c42\u0c38\u0c3f\u0c35\u0c47\u0c2f\u0c3f',
+      whatsappNote:    '\u0c2e\u0c40 \u0c35\u0c3e\u0c1f\u0c4d\u0c38\u0c3e\u0c2a\u0c4d\u200c\u0c15\u0c41 \u0c2c\u0c4d\u0c30\u0c4b\u0c1a\u0c30\u0c4d \u0c2a\u0c02\u0c2a\u0c41\u0c24\u0c3e\u0c2e\u0c41',
+      successMessage:  '\u0c27\u0c28\u0c4d\u0c2f\u0c35\u0c3e\u0c26\u0c3e\u0c32\u0c41! \u0c2e\u0c3e \u0c1f\u0c40\u0c2e\u0c4d \u0c24\u0c4d\u0c35\u0c30\u0c32\u0c4b \u0c2e\u0c3f\u0c2e\u0c4d\u0c2e\u0c32\u0c4d\u0c28\u0c3f \u0c38\u0c02\u0c2a\u0c4d\u0c30\u0c26\u0c3f\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3f.',
+    },
+
+    portfolio: {
+      yearsIndustry:    '\u0c38\u0c02\u0c35\u0c24\u0c4d\u0c38\u0c30\u0c3e\u0c32 \u0c05\u0c28\u0c41\u0c2d\u0c35\u0c02',
+      projectsDelivered:'\u0c2a\u0c42\u0c30\u0c4d\u0c24\u0c2f\u0c3f\u0c28 \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41',
+      happyCustomers:   '\u0c38\u0c02\u0c24\u0c4b\u0c37\u0c02\u0c17\u0c3e \u0c09\u0c28\u0c4d\u0c28 \u0c15\u0c38\u0c4d\u0c1f\u0c2e\u0c30\u0c4d\u0c32\u0c41',
+      apcrdaRera:       '\u0c0e\u0c2a\u0c3f\u0c38\u0c3f\u0c06\u0c30\u0c4d\u0c21\u0c47\u0c0f / \u0c30\u0c47\u0c30\u0c3e',
+      openForBooking:   '\u0c2c\u0c41\u0c15\u0c3f\u0c02\u0c17\u0c4d \u0c15\u0c4b\u0c38\u0c02 \u0c24\u0c46\u0c30\u0c3f\u0c1a\u0c3f \u0c09\u0c02\u0c26\u0c3f',
+      upcomingProject:  '\u0c30\u0c3e\u0c2c\u0c4b\u0c2f\u0c47 \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c4d',
+      viewProject:      '\u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c4d \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f',
+      comingSoon:       '\u0c24\u0c4d\u0c35\u0c30\u0c32\u0c4b \u0c35\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3f',
+      interestedBtn:    '\u0c28\u0c3e\u0c15\u0c41 \u0c06\u0c38\u0c15\u0c4d\u0c24\u0c3f \u0c09\u0c02\u0c26\u0c3f',
+    },
+
+    quote: {
+      ctaBook:     '\u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c47 \u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c2c\u0c41\u0c15\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
+      ctaCallback: '\u0c09\u0c1a\u0c3f\u0c24 \u0c15\u0c3e\u0c32\u0c4d\u200c\u0c2c\u0c4d\u0c2f\u0c3e\u0c15\u0c4d \u0c15\u0c4b\u0c30\u0c02\u0c21\u0c3f',
+    },
+
+    footer: {
+      tagline:      '\u0c06\u0c02\u0c27\u0c4d\u0c30\u0c2a\u0c4d\u0c30\u0c26\u0c47\u0c36\u0c4d \u0c05\u0c02\u0c24\u0c1f\u0c3e \u0c15\u0c32\u0c32\u0c41 \u0c28\u0c46\u0c30\u0c35\u0c47\u0c30\u0c4d\u0c1a\u0c41\u0c24\u0c41\u0c28\u0c4d\u0c28\u0c3e\u0c02',
+      rights:       '\u0c38\u0c30\u0c4d\u0c35\u0c39\u0c15\u0c4d\u0c15\u0c41\u0c32\u0c41 \u0c38\u0c02\u0c30\u0c15\u0c4d\u0c37\u0c3f\u0c24\u0c02.',
+      privacyPolicy:'\u0c17\u0c4b\u0c2a\u0c4d\u0c2f\u0c24\u0c3e \u0c35\u0c3f\u0c27\u0c3e\u0c28\u0c02',
+      quickLinks:   '\u0c24\u0c4d\u0c35\u0c30\u0c3f\u0c24 \u0c32\u0c3f\u0c02\u0c15\u0c41\u0c32\u0c41',
+      ourProjects:  '\u0c2e\u0c3e \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41',
+      followUs:     '\u0c2e\u0c3e\u0c28\u0c41 \u0c05\u0c28\u0c41\u0c38\u0c30\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+    },
+
+    common: {
+      learnMore:      '\u0c2e\u0c30\u0c3f\u0c02\u0c24 \u0c24\u0c46\u0c32\u0c41\u0c38\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f',
+      readMore:       '\u0c2e\u0c30\u0c3f\u0c02\u0c24 \u0c1a\u0c26\u0c35\u0c02\u0c21\u0c3f',
+      viewAll:        '\u0c05\u0c28\u0c4d\u0c28\u0c40 \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f',
+      close:          '\u0c2e\u0c42\u0c38\u0c3f\u0c35\u0c47\u0c2f\u0c3f',
+      loading:        '\u0c32\u0c4b\u0c21\u0c4d \u0c05\u0c35\u0c41\u0c24\u0c4b\u0c02\u0c26\u0c3f...',
+      available:      '\u0c05\u0c02\u0c26\u0c41\u0c2c\u0c3e\u0c1f\u0c41\u0c32\u0c4b',
+      soldOut:        '\u0c05\u0c2e\u0c4d\u0c2e\u0c41\u0c21\u0c2f\u0c3f\u0c02\u0c26\u0c3f',
+      upcoming:       '\u0c30\u0c3e\u0c2c\u0c4b\u0c24\u0c4b\u0c02\u0c26\u0c3f',
+      perSqYd:        '/ \u0c1a.\u0c17.',
+      sqYd:           '\u0c1a.\u0c17.',
+      plots:          '\u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d\u0c32\u0c41',
+      plotsAvailable: '\u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d\u0c32\u0c41 \u0c05\u0c02\u0c26\u0c41\u0c2c\u0c3e\u0c1f\u0c41\u0c32\u0c4b',
+      from:           '\u0c28\u0c41\u0c02\u0c21\u0c3f',
+      yearsOfTrust:   '\u0c38\u0c02\u0c35\u0c24\u0c4d\u0c38\u0c30\u0c3e\u0c32 \u0c28\u0c2e\u0c4d\u0c2e\u0c15\u0c02',
+      clearTitle:     '\u0c15\u0c4d\u0c32\u0c3f\u0c2f\u0c30\u0c4d \u0c1f\u0c48\u0c1f\u0c3f\u0c32\u0c4d',
+      reraRegistered: '\u0c30\u0c47\u0c30\u0c3e \u0c28\u0c2e\u0c4b\u0c26\u0c41',
+    },
+
+    urgency: {
+      limitedOffer: '\u0c2a\u0c30\u0c3f\u0c2e\u0c3f\u0c24 \u0c15\u0c3e\u0c32 \u0c06\u0c2b\u0c30\u0c4d',
+      plotsClosing: '\u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d\u0c32\u0c41 \u0c35\u0c47\u0c17\u0c02\u0c17\u0c3e \u0c05\u0c2e\u0c4d\u0c2e\u0c41\u0c21\u0c35\u0c41\u0c24\u0c41\u0c28\u0c4d\u0c28\u0c3e\u0c2f\u0c3f!',
+      lockInRates:  '\u0c2a\u0c4d\u0c30\u0c38\u0c4d\u0c24\u0c41\u0c24 \u0c27\u0c30\u0c32\u0c28\u0c41 \u0c32\u0c3e\u0c15\u0c4d \u0c1a\u0c47\u0c38\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f',
+      pricesRising: '\u0c35\u0c1a\u0c4d\u0c1a\u0c47 \u0c24\u0c4d\u0c30\u0c48\u0c2e\u0c3e\u0c38\u0c3f\u0c15\u0c02\u0c32\u0c4b \u0c27\u0c30\u0c32\u0c41 \u0c2a\u0c46\u0c30\u0c42\u0c24\u0c41\u0c28\u0c4d\u0c28\u0c3e\u0c2f\u0c3f. \u0c08 \u0c30\u0c4b\u0c1c\u0c47 \u0c2e\u0c40 \u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c38\u0c41\u0c30\u0c15\u0c4d\u0c37\u0c3f\u0c24\u0c02 \u0c1a\u0c47\u0c38\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f.',
+      projectsOpen: '\u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41 \u0c24\u0c46\u0c30\u0c3f\u0c1a\u0c3f \u0c09\u0c28\u0c4d\u0c28\u0c3e\u0c2f\u0c3f',
+      forBooking:   '\u0c2c\u0c41\u0c15\u0c3f\u0c02\u0c17\u0c4d \u0c15\u0c4b\u0c38\u0c02',
+      completed:    '\u0c2a\u0c42\u0c30\u0c4d\u0c24\u0c2f\u0c3f\u0c28\u0c35\u0c3f',
+      happy:        '\u0c38\u0c02\u0c24\u0c4b\u0c37\u0c02\u0c17\u0c3e \u0c09\u0c28\u0c4d\u0c28',
+      families:     '\u0c15\u0c41\u0c1f\u0c41\u0c02\u0c2c\u0c3e\u0c32\u0c41',
+      exploreCta:   '\u0c05\u0c28\u0c4d\u0c28\u0c3f \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41 \u0c05\u0c28\u0c4d\u0c35\u0c47\u0c37\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+    },
+  },
+}
+
+module.exports = { TRANSLATIONS }

@@ -8,6 +8,7 @@ const leadRoutes     = require('./routes/lead.routes')
 const contentRoutes  = require('./routes/content.routes')
 const pricingRoutes  = require('./routes/pricing.routes')
 const projectsRoutes = require('./routes/projects.routes')
+const i18nRoutes     = require('./routes/i18n.routes')
 
 const app  = express()
 const PORT = process.env.PORT || 8082
@@ -42,6 +43,7 @@ app.use('/api/v1/leads',    leadRoutes)
 app.use('/api/v1/content',  contentRoutes)
 app.use('/api/v1/pricing',  pricingRoutes)
 app.use('/api/v1/projects', projectsRoutes)
+app.use('/api/v1/i18n',     i18nRoutes)
 
 // -- Handlers -----------------------------------------------------------
 app.use((req, res) => res.status(404).json({ message: 'Not found: ' + req.method + ' ' + req.path }))
