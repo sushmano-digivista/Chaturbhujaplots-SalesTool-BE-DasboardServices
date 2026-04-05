@@ -100,8 +100,7 @@ const TRANSLATIONS = {
       notifyMe:        'Notify Me When Available \u2192',
       getDetails:      'Get Detailed Plot Information \u2192',
       backHome:        '\u2190 Back to Home',
-      sectionTitle:    'A Legacy of',
-      sectionTitleEm:  'Excellence',
+      sectionTitle:    'A Legacy of Excellence',
       sectionSub:      '10+ projects across the Krishna\u2013Guntur corridor \u2014 1200+ families settled, 100% CRDA & RERA approved.',
     },
 
@@ -272,8 +271,7 @@ const TRANSLATIONS = {
       notifyMe:         '\u0c05\u0c02\u0c26\u0c41\u0c2c\u0c3e\u0c1f\u0c41\u0c32\u0c4b\u0c15\u0c3f \u0c35\u0c1a\u0c4d\u0c1a\u0c3f\u0c28\u0c2a\u0c41\u0c21\u0c41 \u0c24\u0c46\u0c32\u0c3f\u0c2f\u0c1c\u0c47\u0c2f\u0c02\u0c21\u0c3f \u2192',
       getDetails:       '\u0c35\u0c3f\u0c35\u0c30\u0c2e\u0c48\u0c28 \u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c38\u0c2e\u0c3e\u0c1a\u0c3e\u0c30\u0c02 \u0c2a\u0c4a\u0c02\u0c26\u0c02\u0c21\u0c3f \u2192',
       backHome:         '\u2190 \u0c39\u0c4b\u0c2e\u0c4d\u200c\u0c15\u0c41 \u0c24\u0c3f\u0c30\u0c3f\u0c17\u0c3f',
-      sectionTitle:     '\u0c09\u0c24\u0c4d\u0c15\u0c43\u0c37\u0c4d\u0c1f\u0c24\u0c15\u0c41',
-      sectionTitleEm:   '\u0c35\u0c3e\u0c30\u0c38\u0c24\u0c4d\u0c35\u0c02',
+      sectionTitle:     '\u0c35\u0c3e\u0c30\u0c38\u0c24\u0c4d\u0c35\u0c02\u0c17\u0c3e \u0c09\u0c24\u0c4d\u0c15\u0c43\u0c37\u0c4d\u0c1f\u0c24',
       sectionSub:       '10+ \u0c2a\u0c4d\u0c30\u0c3e\u0c1c\u0c46\u0c15\u0c4d\u0c1f\u0c41\u0c32\u0c41 \u0c15\u0c43\u0c37\u0c4d\u0c23\u0c3e\u2013\u0c17\u0c41\u0c02\u0c1f\u0c42\u0c30\u0c41 \u0c15\u0c3e\u0c30\u0c3f\u0c21\u0c3e\u0c30\u0c4d\u0c32\u0c4b \u2014 1200+ \u0c15\u0c41\u0c1f\u0c41\u0c02\u0c2c\u0c3e\u0c32\u0c41 \u0c38\u0c4d\u0c25\u0c3f\u0c30\u0c2a\u0c21\u0c4d\u0c21\u0c3e\u0c2f\u0c3f, 100% CRDA & RERA \u0c06\u0c2e\u0c4b\u0c26\u0c3f\u0c24\u0c02.',
     },
 
