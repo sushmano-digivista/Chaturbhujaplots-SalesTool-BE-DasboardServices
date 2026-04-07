@@ -10,6 +10,8 @@ const pricingRoutes  = require('./routes/pricing.routes')
 const projectsRoutes = require('./routes/projects.routes')
 const i18nRoutes     = require('./routes/i18n.routes')
 
+const { seedProjects } = require('./config/projects.seed')
+
 const app  = express()
 const PORT = process.env.PORT || 8082
 
@@ -63,6 +65,9 @@ async function start() {
     }
     await mongoose.connect(mongoUri)
     console.log('Connected to DB: ' + mongoose.connection.db.databaseName)
+
+    // Seed projects on startup (skips existing documents)
+    await seedProjects()
 
     const server = app.listen(PORT, () =>
       console.log('dashboard-service running on port ' + PORT)
