@@ -23,9 +23,12 @@ jest.mock('../src/config/projects.seed', () => ({
   seedProjects: jest.fn().mockResolvedValue(undefined),
 }))
 
-jest.mock('../src/routes/auth.routes', () => require('express').Router())
-jest.mock('../src/routes/lead.routes', () => require('express').Router())
-jest.mock('../src/routes/content.routes', () => require('express').Router())
+jest.mock('../src/routes/auth.routes',    () => require('express').Router())
+jest.mock('../src/routes/lead.routes',     () => require('express').Router())
+jest.mock('../src/routes/content.routes',  () => require('express').Router())
+jest.mock('../src/routes/projects.routes', () => require('express').Router())
+jest.mock('../src/routes/pricing.routes',  () => require('express').Router())
+jest.mock('../src/routes/i18n.routes',     () => require('express').Router())
 
 describe('start() URI injection', () => {
   const OLD_ENV = process.env
@@ -44,16 +47,16 @@ describe('start() URI injection', () => {
     process.env.MONGODB_URI = 'mongodb://localhost:27017/'
 
     // Re-mock mongoose fresh
-    jest.mock('mongoose', () => {
-      const SchemaMock = jest.fn().mockImplementation(function () { return this })
-      SchemaMock.Types = { Mixed: {} }
-      return {
-        connect: jest.fn().mockResolvedValue({}),
-        model:   jest.fn().mockReturnValue({}),
-        Schema:  SchemaMock,
-        connection: { db: { databaseName: 'anjana_dashboard' } },
-      }
-    })
+    jest.mock('mongoose', () => ({
+  connect: jest.fn().mockResolvedValue({}),
+  model:   jest.fn().mockReturnValue({}),
+  Schema:  Object.assign(
+    jest.fn().mockImplementation(function () { return this }),
+    { Types: { Mixed: {} } }
+  ),
+  models: {},
+  connection: { db: { databaseName: 'anjana_dashboard' } },
+}))
 
     // Mock app.listen
     const express = require('express')
@@ -76,16 +79,16 @@ describe('start() URI injection', () => {
   it('injects anjana_dashboard into URI with query string', async () => {
     process.env.MONGODB_URI = 'mongodb://localhost:27017/?retryWrites=true'
 
-    jest.mock('mongoose', () => {
-      const SchemaMock = jest.fn().mockImplementation(function () { return this })
-      SchemaMock.Types = { Mixed: {} }
-      return {
-        connect: jest.fn().mockResolvedValue({}),
-        model:   jest.fn().mockReturnValue({}),
-        Schema:  SchemaMock,
-        connection: { db: { databaseName: 'anjana_dashboard' } },
-      }
-    })
+    jest.mock('mongoose', () => ({
+  connect: jest.fn().mockResolvedValue({}),
+  model:   jest.fn().mockReturnValue({}),
+  Schema:  Object.assign(
+    jest.fn().mockImplementation(function () { return this }),
+    { Types: { Mixed: {} } }
+  ),
+  models: {},
+  connection: { db: { databaseName: 'anjana_dashboard' } },
+}))
 
     const express = require('express')
     const origListen = express.application.listen
@@ -106,16 +109,16 @@ describe('start() URI injection', () => {
   it('does not double-inject anjana_dashboard', async () => {
     process.env.MONGODB_URI = 'mongodb://localhost:27017/anjana_dashboard'
 
-    jest.mock('mongoose', () => {
-      const SchemaMock = jest.fn().mockImplementation(function () { return this })
-      SchemaMock.Types = { Mixed: {} }
-      return {
-        connect: jest.fn().mockResolvedValue({}),
-        model:   jest.fn().mockReturnValue({}),
-        Schema:  SchemaMock,
-        connection: { db: { databaseName: 'anjana_dashboard' } },
-      }
-    })
+    jest.mock('mongoose', () => ({
+  connect: jest.fn().mockResolvedValue({}),
+  model:   jest.fn().mockReturnValue({}),
+  Schema:  Object.assign(
+    jest.fn().mockImplementation(function () { return this }),
+    { Types: { Mixed: {} } }
+  ),
+  models: {},
+  connection: { db: { databaseName: 'anjana_dashboard' } },
+}))
 
     const express = require('express')
     const origListen = express.application.listen
