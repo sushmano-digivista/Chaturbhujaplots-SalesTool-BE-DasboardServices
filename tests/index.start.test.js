@@ -8,22 +8,21 @@
 const mockListen  = jest.fn((port, cb) => { cb && cb(); return { on: jest.fn() } })
 const mockConnect = jest.fn().mockResolvedValue({})
 
-jest.mock('mongoose', () => {
-  const SchemaMock = jest.fn().mockImplementation(function () { return this })
-  SchemaMock.Types = { Mixed: {} }
-  return {
-    connect: mockConnect,
-    model:   jest.fn().mockReturnValue({}),
-    Schema:  SchemaMock,
-    connection: { db: { databaseName: 'anjana_dashboard' } },
-  }
-})
+// ── Mongoose mock with all required properties ────────────────────────────────
+const SchemaMock = function () { return this }
+SchemaMock.Types = { Mixed: {} }
 
-jest.mock('../src/config/projects.seed', () => ({
-  seedProjects: jest.fn().mockResolvedValue(undefined),
+jest.mock('mongoose', () => ({
+  connect:    mockConnect,
+  model:      jest.fn().mockReturnValue({}),
+  Schema:     SchemaMock,
+  models:     {},
+  connection: { db: { databaseName: 'anjana_dashboard' } },
 }))
 
-jest.mock('../src/routes/auth.routes',    () => require('express').Router())
+// ── Route & seed mocks ────────────────────────────────────────────────────────
+jest.mock('../src/config/projects.seed',   () => ({ seedProjects: jest.fn().mockResolvedValue(undefined) }))
+jest.mock('../src/routes/auth.routes',     () => require('express').Router())
 jest.mock('../src/routes/lead.routes',     () => require('express').Router())
 jest.mock('../src/routes/content.routes',  () => require('express').Router())
 jest.mock('../src/routes/projects.routes', () => require('express').Router())
@@ -46,30 +45,14 @@ describe('start() URI injection', () => {
   it('injects anjana_dashboard into URI without query string', async () => {
     process.env.MONGODB_URI = 'mongodb://localhost:27017/'
 
-    // Re-mock mongoose fresh
-    jest.mock('mongoose', () => ({
-  connect: jest.fn().mockResolvedValue({}),
-  model:   jest.fn().mockReturnValue({}),
-  Schema:  Object.assign(
-    jest.fn().mockImplementation(function () { return this }),
-    { Types: { Mixed: {} } }
-  ),
-  models: {},
-  connection: { db: { databaseName: 'anjana_dashboard' } },
-}))
-
-    // Mock app.listen
     const express = require('express')
     const origListen = express.application.listen
     express.application.listen = mockListen
 
     require('../src/index')
-
-    // Wait for async start()
     await new Promise(r => setTimeout(r, 50))
 
-    const mg = require('mongoose')
-    expect(mg.connect).toHaveBeenCalledWith(
+    expect(mockConnect).toHaveBeenCalledWith(
       expect.stringContaining('anjana_dashboard')
     )
 
@@ -79,27 +62,14 @@ describe('start() URI injection', () => {
   it('injects anjana_dashboard into URI with query string', async () => {
     process.env.MONGODB_URI = 'mongodb://localhost:27017/?retryWrites=true'
 
-    jest.mock('mongoose', () => ({
-  connect: jest.fn().mockResolvedValue({}),
-  model:   jest.fn().mockReturnValue({}),
-  Schema:  Object.assign(
-    jest.fn().mockImplementation(function () { return this }),
-    { Types: { Mixed: {} } }
-  ),
-  models: {},
-  connection: { db: { databaseName: 'anjana_dashboard' } },
-}))
-
     const express = require('express')
     const origListen = express.application.listen
     express.application.listen = mockListen
 
     require('../src/index')
-
     await new Promise(r => setTimeout(r, 50))
 
-    const mg = require('mongoose')
-    expect(mg.connect).toHaveBeenCalledWith(
+    expect(mockConnect).toHaveBeenCalledWith(
       expect.stringContaining('anjana_dashboard?')
     )
 
@@ -109,28 +79,14 @@ describe('start() URI injection', () => {
   it('does not double-inject anjana_dashboard', async () => {
     process.env.MONGODB_URI = 'mongodb://localhost:27017/anjana_dashboard'
 
-    jest.mock('mongoose', () => ({
-  connect: jest.fn().mockResolvedValue({}),
-  model:   jest.fn().mockReturnValue({}),
-  Schema:  Object.assign(
-    jest.fn().mockImplementation(function () { return this }),
-    { Types: { Mixed: {} } }
-  ),
-  models: {},
-  connection: { db: { databaseName: 'anjana_dashboard' } },
-}))
-
     const express = require('express')
     const origListen = express.application.listen
     express.application.listen = mockListen
 
     require('../src/index')
-
     await new Promise(r => setTimeout(r, 50))
 
-    const mg = require('mongoose')
-    const uri = mg.connect.mock.calls[0][0]
-    // Should not have double injection
+    const uri = mockConnect.mock.calls[0][0]
     expect(uri.match(/anjana_dashboard/g).length).toBe(1)
 
     express.application.listen = origListen
