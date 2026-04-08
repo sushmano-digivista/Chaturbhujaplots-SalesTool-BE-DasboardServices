@@ -444,6 +444,18 @@ const TRANSLATIONS = {
       mulapadustadiumDesc:        'International-grade cricket stadium nearby.',
     },
 
+    modal: {
+      projectInterest:     'Project Interest',
+      requiredForDownload: 'required for Download',
+      selectProject:       'Select a project',
+      selectProjectOptional:'Select a project (optional)',
+      anyNotSure:          'Any / Not Sure Yet',
+      anyNotSureAll:       'Any / Not Sure Yet — Download All',
+      plotInterest:        'Plot Interest',
+      selectPreference:    'Select preference',
+      other:               'Other',
+    },
+
     footer: {
       tagline:      'Building Dreams Across Andhra Pradesh',
       rights:       'All rights reserved.',
@@ -855,6 +867,18 @@ const TRANSLATIONS = {
       educationalmedicalDesc:     'SRM, NRI మెడికల్ కళాశాల 10 కి.మీ. లోపల.',
       mulapadustadium:            'ములపాడు స్టేడియం',
       mulapadustadiumDesc:        'అంతర్జాతీయ క్రికెట్ స్టేడియం సమీపంలో.',
+    },
+
+    modal: {
+      projectInterest:     'ప్రాజెక్ట్ ఆసక్తి',
+      requiredForDownload: 'డౌన్లోడ౏కు అవసరం',
+      selectProject:       'ప్రాజెక్ట్ ఎంచుకొండి',
+      selectProjectOptional:'ప్రాజెక్ట్ ఎంచుకొండి (ఐచ్చిక)',
+      anyNotSure:          'ఎస్వైనా / ఇంకా నిర్ణయించలేదు',
+      anyNotSureAll:       'ఎస్వైనా / ఇంకా నిర్ణయించలేదు — అన్నీ డౌన్లోడ౏',
+      plotInterest:        'ప్లాట్ ఆసక్తి',
+      selectPreference:    'మీ ఆసక్తి ఎంచుకొండి',
+      other:               'ఇతరం',
     },
 
     footer: {
