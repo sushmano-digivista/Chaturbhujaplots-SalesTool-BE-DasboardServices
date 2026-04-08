@@ -148,6 +148,10 @@ const TRANSLATIONS = {
       cornerNE:         'North-East Corner',
       cornerOther:      'Other Corners',
       featured:         'FEATURED',
+      priceRange:   'Price Range',
+      charges:      'Charges',
+      sqYdShort:    'sq.yd',
+      extra:        'extra',
     },
 
     content: {
@@ -608,6 +612,10 @@ const TRANSLATIONS = {
       cornerCharges:    '\u0c2e\u0c42\u0c32 \u0c1a\u0c3e\u0c30\u0c4d\u0c1c\u0c40\u0c32\u0c41 (\u0c05\u0c26\u0c28\u0c02\u0c17\u0c3e)',
       corpusFund:       '\u0c15\u0c3e\u0c30\u0c4d\u0c2a\u0c38\u0c4d \u0c2b\u0c02\u0c21\u0c4d',
       featured:         '\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28\u0c26\u0c3f',
+      priceRange:   '\u0c27\u0c30 \u0c35\u0c3f\u0c35\u0c30\u0c23',
+      charges:      '\u0c1a\u0c3e\u0c30\u0c4d\u0c1c\u0c40\u0c32\u0c41',
+      sqYdShort:    '\u0c1a.\u0c17\u0c3e.',
+      extra:        '\u0c05\u0c26\u0c28\u0c02\u0c17\u0c3e',
     },
 
     content: {
