@@ -429,6 +429,21 @@ const TRANSLATIONS = {
       vijayawadaSub:      'Commercial capital of AP',
     },
 
+    highlights: {
+      nearnationalhighway:        'Near National Highway',
+      nearnationalhighwayDesc:    'Direct access to NH-16, connecting major cities.',
+      '8kmfromamaravati':         '8 km from Amaravati',
+      '8kmfromamaravatiDesc':     "Minutes from AP's new capital city.",
+      roadrailconnectivity:       'Road & Rail Connectivity',
+      roadrailconnectivityDesc:   'Proposed express highway and railway expansion.',
+      logistichubparitala:        'Logistic Hub, Paritala',
+      logistichubparitalaDesc:    'Upcoming industrial and logistics corridor.',
+      educationalmedical:         'Educational & Medical',
+      educationalmedicalDesc:     'SRM, NRI Medical College within 10 km.',
+      mulapadustadium:            'Mulapadu Stadium',
+      mulapadustadiumDesc:        'International-grade cricket stadium nearby.',
+    },
+
     footer: {
       tagline:      'Building Dreams Across Andhra Pradesh',
       rights:       'All rights reserved.',
@@ -825,6 +840,21 @@ const TRANSLATIONS = {
       bharatanatyamSub:   'ప్రపంచ ప్రసిద్ధ కళా సంస్థ',
       vijayawadaCity:     'విజయవాడ',
       vijayawadaSub:      'AP వాణిజ్య రాజధాని',
+    },
+
+    highlights: {
+      nearnationalhighway:        'జాతీయ రహదారి సమీపంలో',
+      nearnationalhighwayDesc:    'NH-16కి నేరు ప్రవేశం, ప్రముఖ నగరాలకు జోడు.',
+      '8kmfromamaravati':         'అమరావతి నుండి 8 కి..మీ.',
+      '8kmfromamaravatiDesc':     'AP కొత్త రాజధాని నుండి కొన్ని నిమిషాలలో.',
+      roadrailconnectivity:       'రోడ్ & రైల్ కనెక్టివిటీ',
+      roadrailconnectivityDesc:   'ప్రతిపాదిత ఎక్స్ప్రెస్ హైవే మరియు రైల్వే విస్తరణ.',
+      logistichubparitala:        'లాజిస్టిక్ హబ్, పారిటాల',
+      logistichubparitalaDesc:    'రాబోయే ప్రాదేశిక ప్రాజెక్టులు మరియు లాజిస్టిక్స్ కారిడార్.',
+      educationalmedical:         'విద్యా & వైద్య సౌకర్యాలు',
+      educationalmedicalDesc:     'SRM, NRI మెడికల్ కళాశాల 10 కి.మీ. లోపల.',
+      mulapadustadium:            'ములపాడు స్టేడియం',
+      mulapadustadiumDesc:        'అంతర్జాతీయ క్రికెట్ స్టేడియం సమీపంలో.',
     },
 
     footer: {
