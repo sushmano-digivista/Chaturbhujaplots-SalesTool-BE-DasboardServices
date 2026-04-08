@@ -63,7 +63,7 @@ const TRANSLATIONS = {
     },
 
     hero: {
-      enquireCta:    'Enquire Now',
+      enquireCta:    'View Available Plots',
       brochureCta:   'Download Brochure',
       siteVisitCta:  'Schedule Site Visit',
       callbackCta:   'Request Callback',
@@ -545,7 +545,7 @@ const TRANSLATIONS = {
     },
 
     hero: {
-      enquireCta:   '\u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c47 \u0c38\u0c02\u0c2a\u0c4d\u0c30\u0c26\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f',
+      enquireCta:   '\u0c05\u0c02\u0c26\u0c41\u0c2c\u0c3e\u0c1f\u0c41\u0c32\u0c4b\u0c28\u0c3f \u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d\u0c32\u0c41 \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f',
       brochureCta:  '\u0c2c\u0c4d\u0c30\u0c4b\u0c1a\u0c30\u0c4d \u0c21\u0c4c\u0c28\u0c4d\u200c\u0c32\u0c4b\u0c21\u0c4f \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
       siteVisitCta: '\u0c38\u0c48\u0c1f\u0c4d \u0c35\u0c3f\u0c1c\u0c3f\u0c1f\u0c4d \u0c37\u0c46\u0c21\u0c4d\u0c2f\u0c42\u0c32\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
       callbackCta:  '\u0c15\u0c3e\u0c32\u0c4d\u200c\u0c2c\u0c4d\u0c2f\u0c3e\u0c15\u0c4d \u0c15\u0c4b\u0c30\u0c02\u0c21\u0c3f',
