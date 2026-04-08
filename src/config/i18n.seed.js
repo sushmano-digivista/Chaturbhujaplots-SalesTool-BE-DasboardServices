@@ -110,6 +110,14 @@ const TRANSLATIONS = {
       location:         'Location \u0026 Connectivity',
       comingSoonBanner: 'Coming Soon',
       notifyDesc:       'Plot distribution details, pricing and availability will be shared soon. Register your interest below.',
+      plotPricing:      'PLOT PRICING',
+      perSqYard:        'per sq. yard',
+      dev:              'Dev.',
+      cornerCharges:    'Corner Charges (Extra)',
+      corpusFund:       'Corpus Fund',
+      cornerNE:         'North-East Corner',
+      cornerOther:      'Other Corners',
+      featured:         'FEATURED',
     },
 
     content: {
@@ -258,15 +266,6 @@ const TRANSLATIONS = {
       },
     },
 
-    project: {
-      plotPricing:   'PLOT PRICING',
-      perSqYard:     'per sq. yard',
-      dev:           'Dev.',
-      cornerCharges: 'Corner Charges (Extra)',
-      corpusFund:    'Corpus Fund',
-      featured:      'FEATURED',
-    },
-
     amenityLabels: {
       grandEntrance:    'Architecturally Imposing Grand Entrance Arch',
       avenuePlantation: 'Avenue Plantation on Both Sides of Roads',
@@ -305,6 +304,16 @@ const TRANSLATIONS = {
       nameBoard2:       'Name & Number Display Board',
       overheadElec2:    'Overhead Electricity Connection',
       avenuePlain:      'Avenue Plantation',
+      avenueLinedRoads: 'Avenue Lined Roads',
+      btRoadLayout:     'BT Road Layout',
+      grandEntranceSec: 'Grand Entrance & Security',
+      grandEntranceArch:'Grand Entrance Arch',
+      internalRoads:    'Internal Roads',
+      jogTrackSimple:   'Jogging Track',
+      mainEntranceGate: 'Main Entrance Gate',
+      nh16Frontage:     'NH-16 Frontage',
+      overheadTankSimple:'Overhead Tank & Pipeline',
+      childrenspark:    "Children's Tot Lot & Green Equipped Parks",
     },
 
     footer: {
@@ -458,6 +467,12 @@ const TRANSLATIONS = {
       location:         '\u0c38\u0c4d\u0c25\u0c3e\u0c28\u0c02 \u0026 \u0c15\u0c28\u0c46\u0c15\u0c4d\u0c1f\u0c3f\u0c35\u0c3f\u0c1f\u0c40',
       comingSoonBanner: '\u0c24\u0c4d\u0c35\u0c30\u0c32\u0c4b \u0c35\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3f',
       notifyDesc:       '\u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c35\u0c3f\u0c35\u0c30\u0c23\u0c3e\u0c32\u0c41, \u0c27\u0c30 \u0c2e\u0c30\u0c3f\u0c2f\u0c41 \u0c05\u0c02\u0c26\u0c41\u0c2c\u0c3e\u0c1f\u0c41 \u0c24\u0c4d\u0c35\u0c30\u0c32\u0c4b \u0c24\u0c46\u0c32\u0c3f\u0c2f\u0c1c\u0c47\u0c38\u0c4d\u0c24\u0c3e\u0c02. \u0c15\u0c4d\u0c30\u0c3f\u0c02\u0c26 \u0c2e\u0c40 \u0c06\u0c38\u0c15\u0c4d\u0c24\u0c3f \u0c28\u0c2e\u0c4b\u0c26\u0c41 \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f.',
+      plotPricing:      '\u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c27\u0c30\u0c32\u0c41',
+      perSqYard:        '\u0c1a.\u0c17\u0c3e. \u0c15\u0c41',
+      dev:              '\u0c21\u0c46\u0c35\u0c4d.',
+      cornerCharges:    '\u0c2e\u0c42\u0c32 \u0c1a\u0c3e\u0c30\u0c4d\u0c1c\u0c40\u0c32\u0c41 (\u0c05\u0c26\u0c28\u0c02\u0c17\u0c3e)',
+      corpusFund:       '\u0c15\u0c3e\u0c30\u0c4d\u0c2a\u0c38\u0c4d \u0c2b\u0c02\u0c21\u0c4d',
+      featured:         '\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28\u0c26\u0c3f',
     },
 
     content: {
@@ -536,15 +551,6 @@ const TRANSLATIONS = {
     },
 
 
-    project: {
-      plotPricing:   'ప్లాట్ ధరలు',
-      perSqYard:     'చ.గా. కు',
-      dev:           'డెవ్.',
-      cornerCharges: 'మూల చార్జీలు (అదనంగా)',
-      corpusFund:    'కార్పస్ ఫండ్',
-      featured:      'ముఖ్యమైనది',
-    },
-
     amenityLabels: {
       grandEntrance:    'ఆర్కిటెక్ట్ ప్రవేశద్వారం',
       avenuePlantation: 'రోడ్ల రెండు వైపులా చెట్ల నాటుడు',
@@ -583,6 +589,16 @@ const TRANSLATIONS = {
       nameBoard2:       'పేరు & నంబరు బోర్డు',
       overheadElec2:    'ఓవర్‌హెడ్ విద్యుత్ సంపర్కం',
       avenuePlain:      'అవెన్యూ ప్లాంటేషన౏',
+      avenueLinedRoads: 'అవెన్యూ లైన్డ్ రోడ్లు',
+      btRoadLayout:     'BT రోడ్ లేఅవుట్',
+      grandEntranceSec: 'గ్రాండ్ ప్రవేశం & భద్రత',
+      grandEntranceArch:'గ్రాండ్ ప్రవేశ తోరణం',
+      internalRoads:    'అంతర్గత రోడ్లు',
+      jogTrackSimple:   'జాగింగ్ ట్రాక్',
+      mainEntranceGate: 'ముఖ్య ప్రవేశద్వారం',
+      nh16Frontage:     'NH-16 ఫ్రంటేజ్',
+      overheadTankSimple:'ఓవర్‌హెడ్ టాంకు & పైప్లైన్',
+      childrenspark:    'పిల్లల వినోద పార్కు',
     },
 
     footer: {
