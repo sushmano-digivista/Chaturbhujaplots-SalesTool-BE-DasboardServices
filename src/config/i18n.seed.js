@@ -155,6 +155,10 @@ const TRANSLATIONS = {
       sqYdShort:    'sq.yd',
       extra:        'extra',
       pricingNote:  'All prices per sq. yard. Corner charges additional.',
+      paymentTerms: 'Payment Terms',
+      bookingAmount:'Booking Amount',
+      agreementAmount: 'At Agreement',
+      ofTotal:      'of total',
     },
 
     content: {
@@ -652,6 +656,10 @@ const TRANSLATIONS = {
       sqYdShort:    '\u0c1a.\u0c17\u0c3e.',
       extra:        '\u0c05\u0c26\u0c28\u0c02\u0c17\u0c3e',
       pricingNote:  '\u0c05\u0c28\u0c4d\u0c28\u0c3f \u0c27\u0c30\u0c32\u0c41 \u0c1a.\u0c17\u0c3e. \u0c15\u0c41. \u0c2e\u0c42\u0c32 \u0c1b\u0c3e\u0c30\u0c4d\u0c1c\u0c40\u0c32\u0c41 \u0c05\u0c26\u0c28\u0c02.',
+      paymentTerms:     '\u0c1a\u0c46\u0c32\u0c4d\u0c32\u0c3f\u0c02\u0c2a\u0c41 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28\u0c32\u0c41',
+      bookingAmount:    '\u0c2c\u0c41\u0c15\u0c3f\u0c02\u0c17\u0c4d \u0c2e\u0c4a\u0c24\u0c4d\u0c24\u0c02',
+      agreementAmount:  '\u0c12\u0c2a\u0c4d\u0c2a\u0c02\u0c26\u0c02 \u0c38\u0c2e\u0c2f\u0c02\u0c32\u0c4b',
+      ofTotal:          '\u0c2e\u0c4a\u0c24\u0c4d\u0c24\u0c02\u0c32\u0c4b',
     },
 
     content: {
