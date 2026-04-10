@@ -4,7 +4,11 @@ const defaultContent = {
     headline:      'Premium Plots',
     subheadline:   'Amaravati',
     description:   "Secure your land just 8 km from Andhra Pradesh's new capital city — fully CRDA & RERA approved with world-class amenities.",
-    approvalBadges:['CRDA Approved · LP No: 35/2025','AP RERA · P06060125894','Ready for Construction'],
+    approvalBadges:[
+      'APCRDA Proposed Layout · LP No: 35/2025',
+      'AP RERA · P06060125894',
+      '25 Years · 15+ Projects · 1200+ Families',
+    ],
   },
   highlights: [
     { icon:'🛣️', title:'Near National Highway',   description:'Direct access to NH-16, connecting major cities.',    sortOrder:1 },
@@ -62,6 +66,47 @@ const defaultContent = {
     mapEmbedUrl: 'https://maps.google.com/maps?q=Paritala,Andhra+Pradesh,India&t=k&z=14&ie=UTF8&iwloc=&output=embed',
     mapOpenUrl:  'https://maps.google.com/?q=Paritala,Krishna+District,Andhra+Pradesh',
   },
+  director: {
+    title:  'Marketing Director',
+    name:   'M Siva Nageswara Rao',
+    phone:  '+91 99487 09041',
+    avatar: 'M',
+  },
+  urgency: {
+    tagline:           'Limited Time Offer',
+    headline:          'Plots Closing Fast!',
+    subheadline:       'Lock In Current Rates',
+    description:       'Prices are set to rise next quarter. Secure your plot today before the revision hits.',
+    openProjects:      4,
+    openProjectsLabel: 'Projects Open',
+    openProjectsSub:   'For Booking',
+    completedProjects: 11,
+    completedLabel:    'Projects',
+    completedSub:      'Completed',
+    happyFamilies:     '1200+',
+    familiesLabel:     'Happy',
+    familiesSub:       'Families',
+    barOpenLabel:      'Open for Booking',
+    barClosedLabel:    'Completed & Sold',
+    ctaButton:         'Explore All Projects →',
+  },
+  lcStats: [
+    { num: '25+',  label: 'Years of Trust' },
+    { num: '100%', label: 'Clear Title'    },
+    { num: 'RERA', label: 'Registered'     },
+  ],
+  heroStats: [
+    { end: 25,   suffix: '+', label: 'Years in Industry'  },
+    { end: 15,   suffix: '+', label: 'Projects Delivered' },
+    { end: 1200, suffix: '+', label: 'Happy Customers'    },
+  ],
+  brochureNotes: [
+    {
+      projectName: 'Trimbak Oaks',
+      available:   false,
+      note:        'Brochure for Trimbak Oaks is not yet available. You can still connect with our team via WhatsApp or request a callback — we\'ll share all project details personally.',
+    },
+  ],
 }
 
 module.exports = { defaultContent }

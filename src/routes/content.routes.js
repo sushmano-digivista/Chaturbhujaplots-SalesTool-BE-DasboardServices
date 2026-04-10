@@ -16,6 +16,10 @@ async function getOrCreate() {
 
 // GET /api/v1/content — full content for customer frontend
 router.get('/', async (req, res) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+  res.set('Pragma', 'no-cache')
+  res.set('Expires', '0')
+  res.removeHeader('ETag')
   try {
     const content = await getOrCreate()
     res.json(content)
