@@ -154,6 +154,7 @@ const TRANSLATIONS = {
       charges:      'Charges',
       sqYdShort:    'sq.yd',
       extra:        'extra',
+      pricingNote:  'All prices per sq. yard. Corner charges additional.',
     },
 
     content: {
@@ -241,6 +242,9 @@ const TRANSLATIONS = {
 
 
     quote: {
+      investLine1:    'Invest ₹2 Today —',
+      investLine2:    'Receive ₹20 Tomorrow',
+      quoteText:      'If you invest 2 rupees now, in a few years it will be 10 times your investment.',
       ctaBook:     'Book Your Plot Now',
       expectedReturn: 'Expected Return',
       yearsHorizon: 'Years Horizon',
@@ -647,6 +651,7 @@ const TRANSLATIONS = {
       charges:      '\u0c1a\u0c3e\u0c30\u0c4d\u0c1c\u0c40\u0c32\u0c41',
       sqYdShort:    '\u0c1a.\u0c17\u0c3e.',
       extra:        '\u0c05\u0c26\u0c28\u0c02\u0c17\u0c3e',
+      pricingNote:  '\u0c05\u0c28\u0c4d\u0c28\u0c3f \u0c27\u0c30\u0c32\u0c41 \u0c1a.\u0c17\u0c3e. \u0c15\u0c41. \u0c2e\u0c42\u0c32 \u0c1b\u0c3e\u0c30\u0c4d\u0c1c\u0c40\u0c32\u0c41 \u0c05\u0c26\u0c28\u0c02.',
     },
 
     content: {
@@ -663,16 +668,19 @@ const TRANSLATIONS = {
     },
 
     quote: {
+      investLine1:    '\u0c28\u0c47\u0c21\u0c41 \u20b92 \u0c2a\u0c46\u0c1f\u0c4d\u0c1f\u0c41\u0c2c\u0c21\u0c3f \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f \u2014',
+      investLine2:    '\u0c30\u0c47\u0c2a\u0c41 \u20b920 \u0c2a\u0c4a\u0c02\u0c26\u0c02\u0c21\u0c3f',
+      quoteText:      '\u0c2e\u0c40\u0c30\u0c41 \u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c41 2 \u0c30\u0c42\u0c2a\u0c3e\u0c2f\u0c32\u0c41 \u0c2a\u0c46\u0c1f\u0c4d\u0c1f\u0c41\u0c2c\u0c21\u0c3f \u0c1a\u0c47\u0c38\u0c4d\u0c24\u0c47, \u0c15\u0c4a\u0c28\u0c4d\u0c28\u0c3f \u0c38\u0c02\u0c35\u0c24\u0c4d\u0c38\u0c30\u0c3e\u0c32\u0c32\u0c4b \u0c05\u0c26\u0c3f 10 \u0c30\u0c46\u0c1f\u0c4d\u0c32\u0c41 \u0c05\u0c35\u0c41\u0c24\u0c41\u0c02\u0c26\u0c3f.',
       ctaBook:     '\u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c47 \u0c2a\u0c4d\u0c32\u0c3e\u0c1f\u0c4d \u0c2c\u0c41\u0c15\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f',
       expectedReturn: '\u0c05\u0c02\u0c1a\u0c28\u0c3e \u0c32\u0c3e\u0c2d\u0c02',
       yearsHorizon:   '\u0c38\u0c02\u0c35\u0c24\u0c4d\u0c38\u0c30\u0c3e\u0c32 \u0c15\u0c3e\u0c32\u0c2e\u0c41',
-      crdaRera:       'CRDA + RERA',
-
+      crdaRera:       '\u0c38\u0c3f\u0c06\u0c30\u0c4d\u0c21\u0c40 / \u0c30\u0c47\u0c30\u0c3e',
       ctaCallback: '\u0c09\u0c1a\u0c3f\u0c24 \u0c15\u0c3e\u0c32\u0c4d\u200c\u0c2c\u0c4d\u0c2f\u0c3e\u0c15\u0c4d \u0c15\u0c4b\u0c30\u0c02\u0c21\u0c3f',
     },
 
     projects: {
       anjana: {
+        name:        'అంజనా పారడైజ్',
         loc:         'పారిటాల, అమరావతి సమీపంలో',
         description: 'పారిటాలలో ప్రీమియం ఓపెన్ ప్లాట్లు — NH-16కి ప్రక్కన, ఆంధ్రప్రదేశ్ కొత్త రాజధాని అమరావతి నుండి కేవలం 8 కి.మీ. దూరంలో. CRDA ప్రతిపాదిత లేఅవుట్, 100% క్లియర్ టైటిల్, అవెన్యూ రోడ్లు, 24/7 నీటి పైప్లైన్ మరియు ప్రతి ప్లాట్కు విద్యుత్ సదుపాయం. వెంటనే నిర్మాణానికి సిద్ధంగా ఉంది.',
         highlights: [
@@ -687,6 +695,7 @@ const TRANSLATIONS = {
         ],
       },
       trimbak: {
+        name:        'త్రింబక్ ఓక్స్',
         loc:         'పేనమలూరు, విజయవాడ సమీపంలో',
         description: 'NH-16 ద్వారా విజయవాడ నగరానికి అద్భుతమైన కనెక్టివిటీతో గేటెడ్ కమ్యూనిటీ ప్లాట్లు. CRDA ఆమోదితం — నీరు, విద్యుత్, డ్రైనేజీ మరియు భద్రత వంటి అన్ని ఆధునిక మౌలిక సదుపాయాలతో వెంటనే నిర్మాణానికి సిద్ధంగా ఉంది.',
         highlights: [
@@ -699,6 +708,7 @@ const TRANSLATIONS = {
         ],
       },
       aparna: {
+        name:        'అపర్ణా లెగసీ',
         loc:         'చేవిటికల్లు, అమరావతి క్యాపిటల్ రీజన్ గేట్వే',
         description: 'NTR జిల్లా చేవిటికల్లులో ప్రీమియం APCRDA ప్రతిపాదిత లేఅవుట్ ప్లాట్లు — అమరావతికి అద్భుతమైన కనెక్టివిటీతో ఆక్టర్ రింగ్ రోడ్డు సమీపంలో ఉన్నాయి. వాస్తు అనుకూల ప్లాట్లు అందుబాటులో. ఫేజ్ II బుకింగ్కు తెరచి ఉంది.',
         highlights: [
@@ -713,6 +723,7 @@ const TRANSLATIONS = {
         ],
       },
       varaha: {
+        name:        'వరాహ వర్చ్యూ',
         loc:         'పామర్రు, కృష్ణా జిల్లా',
         description: 'పామర్రు, కృష్ణా జిల్లాలో NH-16 కారిడార్‌పై వ్యూహాత్మక పెట్టుబడి అవకాశం. 132 జాగ్రత్తగా ప్లాన్ చేయబడ్డ ప్లాట్లతో APCRDA ప్రతిపాదిత లేఅవుట్ — ప్రైమ్ NH-16 ఫ్రంటేజ్, బందరు పోర్టు, BEL డిఫెన్స్ కాంప్లెక్స్ మరియు రాబోయే 6-లేన్ హైవే సమీపంలో. అసాధారణ మూల్యాభివృద్ధి అవకాశం.',
         highlights: [
