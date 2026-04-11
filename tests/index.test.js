@@ -9,7 +9,12 @@ const request = require('supertest')
 jest.mock('mongoose', () => ({
   connect: jest.fn().mockResolvedValue({}),
   model:   jest.fn().mockReturnValue({}),
-  Schema:  jest.fn().mockImplementation(function () { return this }),
+  Schema:  Object.assign(
+    jest.fn().mockImplementation(function () { return this }),
+    { Types: { Mixed: {} } }
+  ),
+  models: {},
+  connection: { db: { databaseName: 'anjana_dashboard' } },
 }))
 
 jest.mock('../src/routes/auth.routes', () => {
@@ -22,6 +27,12 @@ jest.mock('../src/routes/lead.routes', () => {
   r.get('/test', (_, res) => res.json({ route: 'lead' }))
   return r
 })
+
+jest.mock('../src/routes/projects.routes', () => require('express').Router())
+jest.mock('../src/routes/pricing.routes',  () => require('express').Router())
+jest.mock('../src/routes/i18n.routes',     () => require('express').Router())
+jest.mock('../src/config/projects.seed',   () => ({ seedProjects: jest.fn().mockResolvedValue(undefined) }))
+
 jest.mock('../src/routes/content.routes', () => {
   const r = require('express').Router()
   r.get('/test', (_, res) => res.json({ route: 'content' }))
