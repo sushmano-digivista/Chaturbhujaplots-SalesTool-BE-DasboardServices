@@ -82,7 +82,7 @@ const PROJECTS_SEED = [
     contact: {
       phone:    '+91 99487 09041',
       whatsapp: '919948709041',
-      email:    'msnraoooo@gmail.com',
+      email:    'chaturbhujaplots@gmail.com',
       address:  'Paritala, Krishna District, AP 521180',
       website:  'www.chaturbhujaplots.in',
     },
@@ -161,7 +161,7 @@ const PROJECTS_SEED = [
     contact: {
       phone:    '+91 99487 09041',
       whatsapp: '919948709041',
-      email:    'msnraoooo@gmail.com',
+      email:    'chaturbhujaplots@gmail.com',
       address:  'Chevitikallu Village, Kanchikacherla Mandal, NTR District, AP',
       website:  'www.chaturbhujaplots.in',
     },
@@ -241,7 +241,7 @@ const PROJECTS_SEED = [
     contact: {
       phone:    '+91 99487 09041',
       whatsapp: '919948709041',
-      email:    'msnraoooo@gmail.com',
+      email:    'chaturbhujaplots@gmail.com',
       address:  'Pamarru Village & Mandal, Krishna District, AP',
       website:  'www.chaturbhujaplots.in',
     },
@@ -299,7 +299,7 @@ const PROJECTS_SEED = [
     contact: {
       phone:    '+91 99487 09041',
       whatsapp: '919948709041',
-      email:    'msnraoooo@gmail.com',
+      email:    'chaturbhujaplots@gmail.com',
       address:  'Penamaluru, Krishna District, AP',
       website:  'www.chaturbhujaplots.in',
     },
