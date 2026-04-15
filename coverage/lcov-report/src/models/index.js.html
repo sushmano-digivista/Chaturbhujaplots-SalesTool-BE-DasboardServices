@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -178,10 +178,10 @@
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,7 +203,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -289,14 +289,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = <span class="cstat-no" title="statement not covered" >require('mongoose')</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = require('mongoose')
 &nbsp;
 // ── Lead Model ────────────────────────────────────────────────────────────────
-const leadSchema = <span class="cstat-no" title="statement not covered" >new mongoose.Schema({</span>
+const leadSchema = new mongoose.Schema({
   name:             { type: String, required: true, trim: true },
   phone:            { type: String, required: true, match: /^[6-9]\d{9}$/ },
   email:            { type: String, trim: true },
@@ -318,7 +318,7 @@ const leadSchema = <span class="cstat-no" title="statement not covered" >new mon
 }, { timestamps: true })
 &nbsp;
 // ── ProjectContent Model (singleton) ─────────────────────────────────────────
-const projectContentSchema = <span class="cstat-no" title="statement not covered" >new mongoose.Schema({</span>
+const projectContentSchema = new mongoose.Schema({
   _id: { type: String, default: 'CONTENT' },
   hero: {
     headline:        String,
@@ -404,10 +404,10 @@ const projectContentSchema = <span class="cstat-no" title="statement not covered
   }],
 }, { _id: false, timestamps: true })
 &nbsp;
-const Lead           = <span class="cstat-no" title="statement not covered" >mongoose.model('Lead',           leadSchema)</span>
-const ProjectContent = <span class="cstat-no" title="statement not covered" >mongoose.model('ProjectContent', projectContentSchema, 'project_content')</span>
+const Lead           = mongoose.model('Lead',           leadSchema)
+const ProjectContent = mongoose.model('ProjectContent', projectContentSchema, 'project_content')
 &nbsp;
-<span class="cstat-no" title="statement not covered" >module.exports = { Lead, ProjectContent }</span>
+module.exports = { Lead, ProjectContent }
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -415,7 +415,7 @@ const ProjectContent = <span class="cstat-no" title="statement not covered" >mon
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-07T12:54:54.408Z
+                at 2026-04-14T11:25:56.048Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
