@@ -12,6 +12,10 @@ const leadSchema = new mongoose.Schema({
       'HERO_CTA', 'CATEGORY_ENQUIRY', 'CONTACT_FORM', 'STICKY_BAR',
       'WHATSAPP', 'FLOATING_BUTTON', 'DIMENSION_ENQUIRY', 'PROJECT_HOME',
       'SITE_VISIT_SCHEDULED', 'UPCOMING_INTEREST', 'CALLBACK_FORM',
+      // Added: new lead sources from 2026 UX improvements
+      'PLOT_NUMBER_ENQUIRY',       // per-plot popover Enquire CTA
+      'EXIT_INTENT',               // exit-intent popup on homepage
+      'AVAILABILITY_BANNER',       // homepage availability card click
     ],
     default: 'CONTACT_FORM',
   },
