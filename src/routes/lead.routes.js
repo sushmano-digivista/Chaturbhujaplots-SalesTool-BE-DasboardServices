@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { Lead } = require('../models/index')
 const { verifyToken } = require('../middleware/auth')
-const { sendLeadNotifications } = require('../services/ownerNotify.service')
+const { sendOwnerLeadAlert } = require('../services/ownerNotify.service')
 
 // ── PUBLIC — customer frontend ────────────────────────────────────────────────
 
@@ -15,10 +15,14 @@ router.post('/', async (req, res) => {
     console.log(`New lead: ${saved.name} | ${saved.phone} | ${saved.source}`)
 
     // CRITICAL: On Vercel serverless, the function terminates after res.send().
-    // ALL notifications (owner WhatsApp + owner email + customer WA confirm)
-    // MUST be awaited BEFORE responding — otherwise Vercel kills the process
-    // immediately and the later sends never happen.
-    await sendLeadNotifications(saved)
+    // The owner alert MUST be awaited BEFORE responding — otherwise Vercel
+    // kills the process immediately and the email never gets sent.
+    //
+    // NOTE: customer-confirmation (WhatsApp to lead) is intentionally NOT
+    // sent. Twilio sandbox cannot reach numbers that haven't opted in,
+    // and production Meta Cloud / Twilio WhatsApp Business setup is not
+    // in place yet. Owner is notified instead and calls back manually.
+    await sendOwnerLeadAlert(saved)
 
     res.status(201).json(saved)
   } catch (err) {
