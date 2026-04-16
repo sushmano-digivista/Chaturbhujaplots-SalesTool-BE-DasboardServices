@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { Lead } = require('../models/index')
 const { verifyToken } = require('../middleware/auth')
-const { sendOwnerLeadAlert } = require('../services/ownerNotify.service')
+const { sendLeadNotifications } = require('../services/ownerNotify.service')
 
 // ── PUBLIC — customer frontend ────────────────────────────────────────────────
 
@@ -15,9 +15,10 @@ router.post('/', async (req, res) => {
     console.log(`New lead: ${saved.name} | ${saved.phone} | ${saved.source}`)
 
     // CRITICAL: On Vercel serverless, the function terminates after res.send().
-    // The owner alert MUST be awaited BEFORE responding — otherwise Vercel
-    // kills the process immediately and the email never gets sent.
-    await sendOwnerLeadAlert(saved)
+    // ALL notifications (owner WhatsApp + owner email + customer WA confirm)
+    // MUST be awaited BEFORE responding — otherwise Vercel kills the process
+    // immediately and the later sends never happen.
+    await sendLeadNotifications(saved)
 
     res.status(201).json(saved)
   } catch (err) {

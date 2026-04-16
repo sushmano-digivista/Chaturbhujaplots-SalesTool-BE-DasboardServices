@@ -159,4 +159,104 @@ async function sendOwnerLeadAlert(lead) {
   ])
 }
 
-module.exports = { sendOwnerLeadAlert }
+// ── Customer thank-you via WhatsApp ─────────────────────────────────────────
+// Sent to the LEAD (the visitor who submitted the form). Confirms we got
+// their details and sets expectation that a callback is coming. Uses the
+// same Twilio account as the owner alert.
+//
+// NOTE ON DELIVERABILITY:
+//   - Twilio SANDBOX (default): the lead must have joined the sandbox by
+//     messaging the sandbox keyword first. For a cold lead this fails
+//     silently — that's OK, we just log and move on.
+//   - Twilio PRODUCTION / Meta Cloud API: when properly approved, this
+//     reaches any number. Requires a Business Account + template approval.
+//   - We never want a customer-confirm failure to fail the lead submission,
+//     so errors are caught and logged but never thrown.
+async function sendCustomerConfirmation(lead) {
+  const sid    = process.env.TWILIO_SID
+  const token  = process.env.TWILIO_TOKEN
+  const fromNum = '14155238886'
+
+  if (!sid || !token) {
+    console.warn('[customerConfirm] Twilio not configured — customer message skipped')
+    return
+  }
+
+  // Normalise the lead phone: strip non-digits, ensure 91 country code
+  const digits = String(lead.phone || '').replace(/\D/g, '')
+  if (!/^\d{10,13}$/.test(digits)) {
+    console.warn('[customerConfirm] Invalid phone format, skipping:', lead.phone)
+    return
+  }
+  const e164 = digits.startsWith('91') ? digits : '91' + digits
+
+  const firstName = (lead.name || '').trim().split(/\s+/)[0] || 'there'
+  const ownerDisplayPhone = '+91 99487 09041'
+
+  const lines = [
+    'Hi ' + firstName + ',',
+    '',
+    'Thank you for your interest in *Chaturbhuja Properties & Infra* 🙏',
+    '',
+    'Our team will call you shortly with:',
+    '✅ Latest on-the-spot price list',
+    '✅ Available plot details',
+    '✅ Site visit booking options',
+    '',
+    'For urgent queries, reach us directly:',
+    '📞 ' + ownerDisplayPhone,
+    '🌐 www.chaturbhujaplots.in',
+    '',
+    '— Team Chaturbhuja',
+  ]
+
+  const params = new URLSearchParams({
+    From: 'whatsapp:+' + fromNum,
+    To:   'whatsapp:+' + e164,
+    Body: lines.join('\n'),
+  })
+
+  const auth = Buffer.from(sid + ':' + token).toString('base64')
+
+  return new Promise((resolve) => {
+    const req = https.request({
+      hostname: 'api.twilio.com',
+      path:     '/2010-04-01/Accounts/' + sid + '/Messages.json',
+      method:   'POST',
+      headers: {
+        'Authorization':  'Basic ' + auth,
+        'Content-Type':   'application/x-www-form-urlencoded',
+        'Content-Length': Buffer.byteLength(params.toString()),
+      },
+    }, (res) => {
+      let data = ''
+      res.on('data', c => { data += c })
+      res.on('end', () => {
+        if (res.statusCode === 201) {
+          console.log('[customerConfirm] ✓ WhatsApp confirmation sent to +' + e164)
+        } else {
+          // Most common failure on sandbox: "21608 — not a valid phone" or
+          // "63016 — not in sandbox". Log and move on, never throw.
+          console.warn('[customerConfirm] ✗ Customer WA failed (' + res.statusCode + '): ' + data.substring(0, 200))
+        }
+        resolve()
+      })
+    })
+    req.on('error', (e) => { console.error('[customerConfirm] error:', e.message); resolve() })
+    req.write(params.toString())
+    req.end()
+  })
+}
+
+// Kick off both owner + customer notifications in parallel.
+// Customer confirmation is best-effort — we don't await it blocking-ly
+// but we do still return from the combined function after both settle.
+async function sendLeadNotifications(lead) {
+  await Promise.allSettled([
+    sendWhatsAppAlert(lead),
+    sendEmailAlert(lead),
+    sendCustomerConfirmation(lead),
+  ])
+}
+
+module.exports = { sendOwnerLeadAlert, sendLeadNotifications, sendCustomerConfirmation }
