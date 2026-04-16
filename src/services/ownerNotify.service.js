@@ -147,10 +147,14 @@ async function sendEmailAlert(lead) {
         pass: (process.env.SMTP_PASS || '').replace(/\s/g, ''),
       },
     })
+    // Subject includes project only when the lead explicitly provided one.
+    const subject = lead.projectInterest
+      ? ('New Lead: ' + lead.name + ' | +91' + phone + ' | ' + lead.projectInterest)
+      : ('New Lead: ' + lead.name + ' | +91' + phone)
     await transporter.sendMail({
       from:    '"Chaturbhuja Leads" <' + process.env.SMTP_USER + '>',
       to:      ownerEmail,
-      subject: 'New Lead: ' + lead.name + ' | +91' + phone + ' | ' + project,
+      subject,
       html,
     })
     console.log('[ownerNotify] ✓ Email alert sent to ' + ownerEmail)
