@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #111; }
+  .card {
+    width: 1080px; height: 1080px;
+    background: linear-gradient(160deg, #0a1a0f 0%, #1a3a25 40%, #0d2818 100%);
+    position: relative; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  /* Diagonal gold accent */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -100px;
+    width: 500px; height: 1400px;
+    background: linear-gradient(45deg, transparent 0%, rgba(201,168,76,0.03) 50%, rgba(201,168,76,0.08) 100%);
+    transform: rotate(15deg);
+  }
+  /* Subtle grid pattern */
+  .card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .content { position: relative; z-index: 2; padding: 60px; height: 100%; display: flex; flex-direction: column; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4);
+    padding: 10px 20px; border-radius: 6px;
+    font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: #C9A84C; width: fit-content;
+  }
+  .headline {
+    margin-top: 40px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 78px; font-weight: 700; line-height: 1.0;
+    color: #fff;
+  }
+  .headline em {
+    font-style: normal;
+    color: #C9A84C;
+    display: block;
+    font-size: 90px;
+    font-weight: 700;
+  }
+  .headline .thin {
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    font-size: 64px;
+  }
+  .stats-row {
+    display: flex; gap: 0; margin-top: auto; margin-bottom: 30px;
+  }
+  .stat-box {
+    flex: 1;
+    padding: 28px 24px;
+    border: 1px solid rgba(201,168,76,0.2);
+    text-align: center;
+    position: relative;
+  }
+  .stat-box:first-child { border-radius: 12px 0 0 12px; }
+  .stat-box:last-child { border-radius: 0 12px 12px 0; }
+  .stat-box .num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px; font-weight: 700; color: #C9A84C;
+  }
+  .stat-box .label {
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .divider-line {
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg, #C9A84C, transparent);
+    margin-top: 30px;
+  }
+  .sub-text {
+    font-size: 20px; color: rgba(255,255,255,0.6);
+    margin-top: 20px; line-height: 1.6;
+    max-width: 500px;
+    font-family: 'Inter', sans-serif;
+  }
+  .footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 700; color: #fff;
+    letter-spacing: 2px;
+  }
+  .brand span { color: #C9A84C; }
+  .brand-sub { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-top: 4px; }
+  .credit { text-align: right; }
+  .credit-top { font-size: 11px; color: rgba(255,255,255,0.35); }
+  .credit-name { font-size: 13px; color: #C9A84C; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="content">
+    <div class="tag">WEALTH THAT GROWS</div>
+    <h1 class="headline">
+      LAND<br>
+      <em>NEVER</em>
+      LOSES<br>
+      <span class="thin">ITS VALUE.</span>
+    </h1>
+    <div class="divider-line"></div>
+    <p class="sub-text">
+      Gold fluctuates. Stocks crash.<br>
+      But land near a capital city?<br>
+      It only goes up.
+    </p>
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="num">25+</div>
+        <div class="label">Years Trust</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">15</div>
+        <div class="label">Projects</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">1200+</div>
+        <div class="label">Families</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">4</div>
+        <div class="label">Open Now</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>
+        <div class="brand">CHATURBHUJA <span>PLOTS</span></div>
+        <div class="brand-sub">CHATURBHUJAPLOTS.IN</div>
+      </div>
+      <div class="credit">
+        <div class="credit-top">Website by</div>
+        <div class="credit-name">SM Solutions & Technologies</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
