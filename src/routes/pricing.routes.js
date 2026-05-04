@@ -16,31 +16,31 @@ const { verifyToken } = require('../middleware/auth')
 const DEFAULT_PRICING = [
   {
     _id: 'anjana', projectName: 'Anjana Paradise',
-    east:    { base: 13000, dev: 1000, label: 'Rs.13,000 + Rs.1,000 Dev. Charges' },
-    west:    { base: 12500, dev: 1000, label: 'Rs.12,500 + Rs.1,000 Dev. Charges' },
+    east:    { base: 12999, dev: 1000, label: 'Rs.12,999 + Rs.1,000 Dev. Charges' },
+    west:    { base: 12499, dev: 1000, label: 'Rs.12,499 + Rs.1,000 Dev. Charges' },
     corners: [
-      { type: 'North-East Corner', extra: 1000, label: 'Rs.1,000/sq.yd extra' },
-      { type: 'Other Corners',     extra: 500,  label: 'Rs.500/sq.yd extra'   },
+      { type: 'North-East Corner', extra: 999, label: 'Rs.999/sq.yd extra' },
+      { type: 'Other Corners',     extra: 499, label: 'Rs.499/sq.yd extra' },
     ],
     note: 'All prices per sq. yard. Corner charges additional.', active: true,
   },
   {
     _id: 'aparna', projectName: 'Aparna Legacy',
-    east:    { base: 12000, dev: 1000, label: 'Rs.12,000 + Rs.1,000 Dev. Charges' },
-    west:    { base: 11500, dev: 1000, label: 'Rs.11,500 + Rs.1,000 Dev. Charges' },
+    east:    { base: 11999, dev: 1000, label: 'Rs.11,999 + Rs.1,000 Dev. Charges' },
+    west:    { base: 11499, dev: 1000, label: 'Rs.11,499 + Rs.1,000 Dev. Charges' },
     corners: [
-      { type: 'North-East Corner', extra: 1000, label: 'Rs.1,000/sq.yd extra' },
-      { type: 'Other Corners',     extra: 500,  label: 'Rs.500/sq.yd extra'   },
+      { type: 'North-East Corner', extra: 999, label: 'Rs.999/sq.yd extra' },
+      { type: 'Other Corners',     extra: 499, label: 'Rs.499/sq.yd extra' },
     ],
     note: 'All prices per sq. yard. Corner charges additional.', active: true,
   },
   {
     _id: 'varaha', projectName: 'Varaha Virtue',
-    east:    { base: 15000, dev: 1000, label: 'Rs.15,000 + Rs.1,000 Dev. Charges' },
-    west:    { base: 14500, dev: 1000, label: 'Rs.14,500 + Rs.1,000 Dev. Charges' },
+    east:    { base: 14999, dev: 1000, label: 'Rs.14,999 + Rs.1,000 Dev. Charges' },
+    west:    { base: 14499, dev: 1000, label: 'Rs.14,499 + Rs.1,000 Dev. Charges' },
     corners: [
-      { type: 'North-East Corner', extra: 1000, label: 'Rs.1,000/sq.yd extra' },
-      { type: 'Other Corners',     extra: 500,  label: 'Rs.500/sq.yd extra'   },
+      { type: 'North-East Corner', extra: 999, label: 'Rs.999/sq.yd extra' },
+      { type: 'Other Corners',     extra: 499, label: 'Rs.499/sq.yd extra' },
     ],
     corpus: { amount: 100, label: 'Rs.100/sq.yd Corpus Fund' },
     note: 'All prices per sq. yard. Corner charges and corpus fund additional.', active: true,
@@ -107,3 +107,4 @@ router.delete('/:id', verifyToken, async (req, res) => {
 })
 
 module.exports = router
+
