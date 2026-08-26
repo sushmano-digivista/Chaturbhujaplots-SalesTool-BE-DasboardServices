@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #111; }
+  .card {
+    width: 1080px; height: 1080px;
+    background: #faf8f3;
+    position: relative; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  /* Left accent bar */
+  .accent-bar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 8px;
+    background: linear-gradient(180deg, #C9A84C, #1a3a25);
+  }
+  .content { position: relative; z-index: 2; padding: 60px 60px 60px 80px; height: 100%; display: flex; flex-direction: column; }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 160px; color: rgba(201,168,76,0.15);
+    line-height: 0.6; margin-bottom: -20px;
+  }
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px; font-weight: 700; color: #1a3a25;
+    line-height: 1.35; max-width: 850px;
+    font-style: italic;
+  }
+  .quote-text .highlight {
+    color: #C9A84C; font-style: italic;
+  }
+
+  .author-block {
+    margin-top: 35px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .author-avatar {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #1a3a25, #2a5a3a);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 700; color: #C9A84C;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .author-name { font-size: 18px; font-weight: 700; color: #1a3a25; }
+  .author-role { font-size: 13px; color: #888; margin-top: 2px; }
+
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, #C9A84C, #e0ddd4, transparent);
+    margin: 35px 0;
+  }
+
+  .bottom-section { margin-top: auto; }
+
+  .customer-stories-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 3px;
+    text-transform: uppercase; color: #999; margin-bottom: 24px;
+  }
+
+  .stats-strip {
+    display: flex; gap: 0; margin-bottom: 35px;
+  }
+  .stat-item {
+    flex: 1; text-align: center;
+    padding: 24px 16px;
+    border-top: 2px solid #1a3a25;
+    background: rgba(26,58,37,0.04);
+  }
+  .stat-item:first-child { border-radius: 8px 0 0 8px; }
+  .stat-item:last-child { border-radius: 0 8px 8px 0; }
+  .stat-item + .stat-item { border-left: 1px solid #e8e5dc; }
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 34px; font-weight: 700; color: #1a3a25;
+  }
+  .stat-label {
+    font-size: 11px; color: #888;
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
+  }
+
+  .cta-row {
+    display: flex; align-items: center; gap: 20px;
+  }
+  .cta-btn {
+    background: linear-gradient(135deg, #1a3a25, #2a5a3a);
+    color: #fff; padding: 16px 36px; border-radius: 8px;
+    font-size: 15px; font-weight: 700; letter-spacing: 1px;
+  }
+  .cta-text { font-size: 14px; color: #999; }
+
+  .footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-top: 30px;
+  }
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 700; color: #1a3a25; letter-spacing: 2px;
+  }
+  .brand span { color: #C9A84C; }
+  .brand-sub { font-size: 11px; color: #bbb; letter-spacing: 2px; margin-top: 2px; }
+  .credit { text-align: right; }
+  .credit-top { font-size: 10px; color: #bbb; }
+  .credit-name { font-size: 12px; color: #C9A84C; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="accent-bar"></div>
+  <div class="content">
+    <div class="quote-mark">"</div>
+    <div class="quote-text">
+      I bought a plot in Anjana Paradise for <span class="highlight">Rs 12 lakhs</span> in 2023. Today, similar plots are going for <span class="highlight">Rs 28 lakhs</span>. Best financial decision of my life.
+    </div>
+    <div class="author-block">
+      <div class="author-avatar">RK</div>
+      <div>
+        <div class="author-name">Rajesh Kumar</div>
+        <div class="author-role">Software Engineer, Hyderabad &bull; Plot Owner since 2023</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="bottom-section">
+      <div class="customer-stories-label">WHY 1200+ FAMILIES CHOSE US</div>
+      <div class="stats-strip">
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Clear Titles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">APCRDA</div>
+          <div class="stat-label">Approved</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">RERA</div>
+          <div class="stat-label">Registered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8 km</div>
+          <div class="stat-label">From Capital</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <div class="brand">CHATURBHUJA <span>PLOTS</span></div>
+        <div class="brand-sub">CHATURBHUJAPLOTS.IN</div>
+      </div>
+      <div class="credit">
+        <div class="credit-top">Website by</div>
+        <div class="credit-name">SM Solutions & Technologies</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

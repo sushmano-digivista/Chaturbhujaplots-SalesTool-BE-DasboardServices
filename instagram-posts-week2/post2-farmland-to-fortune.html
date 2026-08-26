@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #111; }
+  .card {
+    width: 1080px; height: 1080px;
+    background: #faf8f3;
+    position: relative; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  /* Top dark banner */
+  .top-banner {
+    background: linear-gradient(135deg, #0d2818, #1a3a25);
+    padding: 50px 60px 60px;
+    position: relative;
+  }
+  .top-banner::after {
+    content: '';
+    position: absolute; bottom: -30px; left: 0; right: 0;
+    height: 30px;
+    background: #faf8f3;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 95% 100%, 90% 0, 85% 100%, 80% 0, 75% 100%, 70% 0, 65% 100%, 60% 0, 55% 100%, 50% 0, 45% 100%, 40% 0, 35% 100%, 30% 0, 25% 100%, 20% 0, 15% 100%, 10% 0, 5% 100%, 0 0);
+  }
+  .label-row { display: flex; gap: 12px; margin-bottom: 28px; }
+  .label-tag {
+    padding: 8px 18px; border-radius: 4px;
+    font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
+  }
+  .label-red { background: #d4380d; color: #fff; }
+  .label-outline { border: 1.5px solid rgba(201,168,76,0.6); color: #C9A84C; }
+  .banner-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 68px; font-weight: 700; color: #fff; line-height: 1.05;
+  }
+  .banner-headline .gold { color: #C9A84C; }
+  .banner-sub {
+    font-size: 17px; color: rgba(255,255,255,0.55);
+    margin-top: 16px; font-style: italic;
+  }
+  /* Timeline section */
+  .timeline {
+    padding: 55px 60px 0;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .timeline-item {
+    display: flex; align-items: stretch; gap: 0;
+    min-height: 100px;
+  }
+  .timeline-left {
+    width: 80px; display: flex; flex-direction: column; align-items: center;
+    position: relative;
+  }
+  .timeline-year {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 700; color: #1a3a25;
+    background: #e8e3d5; border-radius: 8px;
+    padding: 8px 14px; z-index: 2;
+  }
+  .timeline-line {
+    width: 2px; flex: 1;
+    background: linear-gradient(180deg, #C9A84C, rgba(201,168,76,0.2));
+  }
+  .timeline-right {
+    flex: 1; padding: 6px 0 30px 28px;
+  }
+  .timeline-title {
+    font-size: 22px; font-weight: 800; color: #1a3a25;
+  }
+  .timeline-desc {
+    font-size: 15px; color: #777; margin-top: 4px; line-height: 1.5;
+  }
+  .timeline-highlight {
+    display: inline-block; margin-top: 8px;
+    background: rgba(201,168,76,0.15); color: #8a7030;
+    padding: 4px 12px; border-radius: 4px;
+    font-size: 13px; font-weight: 700;
+  }
+  /* Footer */
+  .card-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 28px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid #e0ddd4;
+  }
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 700; color: #1a3a25; letter-spacing: 2px;
+  }
+  .brand span { color: #C9A84C; }
+  .brand-sub { font-size: 11px; color: #999; letter-spacing: 2px; margin-top: 2px; }
+  .credit { text-align: right; }
+  .credit-top { font-size: 10px; color: #bbb; }
+  .credit-name { font-size: 12px; color: #C9A84C; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top-banner">
+    <div class="label-row">
+      <div class="label-tag label-red">RISING FAST</div>
+      <div class="label-tag label-outline">AMARAVATI REGION</div>
+    </div>
+    <h1 class="banner-headline">
+      FROM <span class="gold">FARMLAND</span><br>
+      TO FORTUNE.
+    </h1>
+    <p class="banner-sub">The Amaravati land value story in 4 years.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="timeline-title">Capital City Announced</div>
+        <div class="timeline-desc">Amaravati officially recognized as AP's capital</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="timeline-title">Infrastructure Boom Begins</div>
+        <div class="timeline-desc">NH-16 expansion, new railway, expressway projects</div>
+        <div class="timeline-highlight">Land prices up 40%</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="timeline-title">Govt Investment Surge</div>
+        <div class="timeline-desc">Rs 15,000 Cr allocated for capital development</div>
+        <div class="timeline-highlight">Demand doubles</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2026</div>
+      </div>
+      <div class="timeline-right">
+        <div class="timeline-title">Your Window Is NOW</div>
+        <div class="timeline-desc">Early investors already seeing 3-5x returns. Limited APCRDA-approved plots remain.</div>
+        <div class="timeline-highlight">Best entry point before next price revision</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div>
+      <div class="brand">CHATURBHUJA <span>PLOTS</span></div>
+      <div class="brand-sub">CHATURBHUJAPLOTS.IN</div>
+    </div>
+    <div class="credit">
+      <div class="credit-top">Website by</div>
+      <div class="credit-name">SM Solutions & Technologies</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
