@@ -27,7 +27,7 @@ const DEFAULT_PRICING = [
   {
     _id: 'aparna', projectName: 'Aparna Legacy',
     east:    { base: 12000, dev: 1000, label: 'Rs.12,000 + Rs.1,000 Dev. Charges' },
-    west:    { base: 11999, dev: 1000, label: 'Rs.11,999 + Rs.1,000 Dev. Charges' },
+    west:    { base: 11499, dev: 1000, label: 'Rs.11,499 + Rs.1,000 Dev. Charges' },
     corners: [
       { type: 'North-East Corner', extra: 1000, label: 'Rs.1,000/sq.yd extra' },
       { type: 'Other Corners',     extra: 500,  label: 'Rs.500/sq.yd extra'   },
