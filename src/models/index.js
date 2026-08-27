@@ -73,9 +73,9 @@ const projectContentSchema = new mongoose.Schema({
   },
   // ── Director contact card shown on Hero ───────────────────────────────────
   director: {
-    title:  String,   // e.g. "Marketing Director"
-    name:   String,   // e.g. "M Siva Nageswara Rao"
-    phone:  String,   // e.g. "+91 99487 09041"
+    title:  String,   // e.g. "Marketing Agent"
+    name:   String,   // e.g. "Mr. Simhadri Sudheer Babu"
+    phone:  String,   // e.g. "+91 91773 70623"
     avatar: String,   // initials or emoji, e.g. "M"
   },
   // ── Urgency / Limited-Time card data ─────────────────────────────────────

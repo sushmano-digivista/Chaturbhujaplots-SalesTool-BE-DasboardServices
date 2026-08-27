@@ -59,17 +59,17 @@ const defaultContent = {
     { value:'2025', label:'CRDA Approved'  },
   ],
   contact: {
-    phone:       '+91 99999 99999',
-    whatsapp:    '919999999999',
-    email:       'info@anjanaparadise.in',
+    phone:       '+91 91773 70623',
+    whatsapp:    '919177370623',
+    email:       'sudheerbabu.simhadri@gmail.com',
     address:     'Paritala, Krishna District, Andhra Pradesh 521180',
     mapEmbedUrl: 'https://maps.google.com/maps?q=Paritala,Andhra+Pradesh,India&t=k&z=14&ie=UTF8&iwloc=&output=embed',
     mapOpenUrl:  'https://maps.google.com/?q=Paritala,Krishna+District,Andhra+Pradesh',
   },
   director: {
-    title:  'Marketing Director',
-    name:   'M Siva Nageswara Rao',
-    phone:  '+91 99487 09041',
+    title:  'Marketing Agent',
+    name:   'Mr. Simhadri Sudheer Babu',
+    phone:  '+91 91773 70623',
     avatar: 'M',
   },
   urgency: {
