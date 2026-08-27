@@ -111,10 +111,17 @@ async function sendEmailAlert(lead) {
   }
 
   const phone    = (lead.phone || '').replace(/\D/g, '').replace(/^91/, '')
-  const project  = lead.projectInterest  || 'Not specified'
-  const category = lead.categoryInterest || 'Not specified'
   const source   = SOURCE_LABELS[lead.source] || lead.source || 'Unknown'
   const time     = formatIST(lead.createdAt || new Date())
+
+  // Only surface Email / Project / Plot Interest rows when they actually
+  // have a value. For the minimal exit-intent form these are blank and
+  // just clutter the email — keep the alert clean.
+  const emailRow    = lead.email    ? ('<p><strong>Email:</strong> '         + lead.email            + '</p>') : ''
+  const projectRow  = lead.projectInterest
+    ? ('<p><strong>Project:</strong> '       + lead.projectInterest  + '</p>') : ''
+  const categoryRow = lead.categoryInterest
+    ? ('<p><strong>Plot Interest:</strong> ' + lead.categoryInterest + '</p>') : ''
 
   const html = '<div style="font-family:Arial,sans-serif;max-width:580px;margin:0 auto;">'
     + '<div style="background:#1E4D2B;padding:20px;">'
@@ -124,9 +131,9 @@ async function sendEmailAlert(lead) {
     + '<div style="padding:20px;background:#fafaf7;">'
     + '<p><strong>Name:</strong> ' + lead.name + '</p>'
     + '<p><strong>Mobile:</strong> +91 ' + phone + '</p>'
-    + '<p><strong>Email:</strong> ' + (lead.email || 'Not provided') + '</p>'
-    + '<p><strong>Project:</strong> ' + project + '</p>'
-    + '<p><strong>Plot Interest:</strong> ' + category + '</p>'
+    + emailRow
+    + projectRow
+    + categoryRow
     + '<p><strong>Source:</strong> ' + source + '</p>'
     + '</div></div>'
 
@@ -140,10 +147,14 @@ async function sendEmailAlert(lead) {
         pass: (process.env.SMTP_PASS || '').replace(/\s/g, ''),
       },
     })
+    // Subject includes project only when the lead explicitly provided one.
+    const subject = lead.projectInterest
+      ? ('New Lead: ' + lead.name + ' | +91' + phone + ' | ' + lead.projectInterest)
+      : ('New Lead: ' + lead.name + ' | +91' + phone)
     await transporter.sendMail({
       from:    '"Chaturbhuja Leads" <' + process.env.SMTP_USER + '>',
       to:      ownerEmail,
-      subject: 'New Lead: ' + lead.name + ' | +91' + phone + ' | ' + project,
+      subject,
       html,
     })
     console.log('[ownerNotify] ✓ Email alert sent to ' + ownerEmail)

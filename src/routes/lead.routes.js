@@ -17,6 +17,11 @@ router.post('/', async (req, res) => {
     // CRITICAL: On Vercel serverless, the function terminates after res.send().
     // The owner alert MUST be awaited BEFORE responding — otherwise Vercel
     // kills the process immediately and the email never gets sent.
+    //
+    // NOTE: customer-confirmation (WhatsApp to lead) is intentionally NOT
+    // sent. Twilio sandbox cannot reach numbers that haven't opted in,
+    // and production Meta Cloud / Twilio WhatsApp Business setup is not
+    // in place yet. Owner is notified instead and calls back manually.
     await sendOwnerLeadAlert(saved)
 
     res.status(201).json(saved)
