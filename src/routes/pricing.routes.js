@@ -45,6 +45,17 @@ const DEFAULT_PRICING = [
     corpus: { amount: 100, label: 'Rs.100/sq.yd Corpus Fund' },
     note: 'All prices per sq. yard. Corner charges and corpus fund additional.', active: true,
   },
+  {
+    _id: 'trimbak', projectName: 'Trimbak Oaks',
+    east:    { base: 28999, dev: 1000, label: 'Rs.28,999 + Rs.1,000 Dev. Charges' },
+    west:    { base: 28499, dev: 1000, label: 'Rs.28,499 + Rs.1,000 Dev. Charges' },
+    corners: [
+      { type: 'North-East Corner', extra: 1500, label: 'Rs.1,500/sq.yd extra' },
+      { type: 'Other Corners',     extra: 1000, label: 'Rs.1,000/sq.yd extra' },
+    ],
+    corpus: { amount: 100, label: 'Rs.100/sq.yd Corpus Fund' },
+    note: 'All prices per sq. yard. Corner charges and corpus fund additional.', active: true,
+  },
 ]
 
 async function seedIfEmpty() {
